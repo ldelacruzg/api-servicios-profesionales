@@ -6,5 +6,5 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "profesionales")
 public class Profesional {
-   
+   private Long idProfesional;
 }
