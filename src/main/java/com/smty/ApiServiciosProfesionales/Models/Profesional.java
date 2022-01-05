@@ -7,4 +7,5 @@ import javax.persistence.Table;
 @Table(name = "profesionales")
 public class Profesional {
    private Long idProfesional;
+   private String urlSitioWeb;
 }
