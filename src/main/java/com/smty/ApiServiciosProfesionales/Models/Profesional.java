@@ -15,4 +15,5 @@ public class Profesional implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idProfesional;
 	private String urlSitioWeb;
+	private String urlLinkedin;
 }
