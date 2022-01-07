@@ -18,4 +18,8 @@ public class Profesional implements Serializable {
 	private Long idProfesional;
 	private String urlSitioWeb;
 	private String urlLinkedin;
+
+	//private Persona persona;
+	//@ManyToOne
+	//@JoinColumn(name = "id_persona")
 }
