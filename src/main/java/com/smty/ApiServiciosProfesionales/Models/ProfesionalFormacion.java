@@ -9,10 +9,13 @@ import java.util.Date;
 @Data
 @Entity
 @Table(name = "profesionales_formaciones")
-public class ProfesionalFormacion implements Serializable{
+public class ProfesionalFormacion {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idProfesionalForomacion;
+    @Column(name ="id_profesional_formacion")
+    private Long idProfesionalFormacion;
+
+    @Column(name ="year")
     private Date year;
 
     @ManyToOne

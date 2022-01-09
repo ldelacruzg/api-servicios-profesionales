@@ -7,10 +7,13 @@ import java.io.Serializable;
 @Data
 @Entity
 @Table(name = "profesionales_habilidades")
-public class ProfesionalHabilidad implements Serializable {
+public class ProfesionalHabilidad {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name ="id_profesional_habilidad")
     private Long idProfesionalHabilidad;
+
+    @Column(name ="nivel", length = 30)
     private String nivel;
 
     @ManyToOne

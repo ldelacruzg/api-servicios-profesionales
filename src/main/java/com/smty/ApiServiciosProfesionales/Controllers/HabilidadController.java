@@ -1,4 +1,4 @@
-package com.smty.ApiServiciosProfesionales.ControllersREST;
+package com.smty.ApiServiciosProfesionales.Controllers;
 
 import com.smty.ApiServiciosProfesionales.Models.Habilidad;
 import com.smty.ApiServiciosProfesionales.Repositories.HabilidadRepository;
@@ -12,7 +12,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("api/habilidad")
-public class HabilidadREST {
+public class HabilidadController {
     @Autowired
     private HabilidadRepository habilidadRepository ;
 
@@ -26,7 +26,7 @@ public class HabilidadREST {
 
     // BUSCAR POR ID
     @RequestMapping(value = "{id}")
-    public ResponseEntity<Habilidad> finfById(@PathVariable("id")Long id){
+    public ResponseEntity<Habilidad> finfById(@PathVariable("id")int id){
         Optional<Habilidad> optional =habilidadRepository.findById(id);
         if(optional.isPresent()) {
             return ResponseEntity.ok(optional.get());
@@ -44,7 +44,7 @@ public class HabilidadREST {
 
     //ELIMINAR
     @DeleteMapping(value =  "{id}")
-    public ResponseEntity<Void> delete (@PathVariable("id")Long id) {
+    public ResponseEntity<Void> delete (@PathVariable("id")int id) {
         habilidadRepository.deleteById(id);
         return ResponseEntity.ok(null);
     }

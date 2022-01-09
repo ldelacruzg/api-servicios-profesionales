@@ -1,4 +1,4 @@
-package com.smty.ApiServiciosProfesionales.ControllersREST;
+package com.smty.ApiServiciosProfesionales.Controllers;
 
 import com.smty.ApiServiciosProfesionales.Models.Profesional;
 import com.smty.ApiServiciosProfesionales.Repositories.ProfesionalRepository;
@@ -11,7 +11,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("api/profesional")
-public class ProfesionalREST {
+public class ProfesionalController {
     @Autowired
     private ProfesionalRepository profesionalRepository;
 

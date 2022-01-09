@@ -1,4 +1,4 @@
-package com.smty.ApiServiciosProfesionales.ControllersREST;
+package com.smty.ApiServiciosProfesionales.Controllers;
 
 import com.smty.ApiServiciosProfesionales.Models.Certificacion;
 import com.smty.ApiServiciosProfesionales.Repositories.CertificacionRepository;
@@ -14,7 +14,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("api/certificacion")
-public class CertificacionREST {
+public class CertificacionController {
     @Autowired
     private CertificacionRepository certificacionRepository;
 
@@ -28,7 +28,7 @@ public class CertificacionREST {
 
     // BUSCAR POR ID
     @RequestMapping(value = "{id}")
-    public ResponseEntity<Certificacion> finfById(@PathVariable("id")Long id){
+    public ResponseEntity<Certificacion> finfById(@PathVariable("id")Integer id){
         Optional<Certificacion> optional =certificacionRepository.findById(id);
         if(optional.isPresent()) {
             return ResponseEntity.ok(optional.get());
@@ -46,7 +46,7 @@ public class CertificacionREST {
 
     //ELIMINAR
     @DeleteMapping(value =  "{id}")
-    public ResponseEntity<Void> delete (@PathVariable("id")Long id) {
+    public ResponseEntity<Void> delete (@PathVariable("id")Integer id) {
         certificacionRepository.deleteById(id);
         return ResponseEntity.ok(null);
     }
