@@ -31,6 +31,6 @@ public class Factura {
 	@Column(name="estado")
     private Boolean estado;
 	
-	@Column(name="descripcion", length = 81)
+	@Column(name="descripcion", length = 80)
     private String descripcion;
 }
