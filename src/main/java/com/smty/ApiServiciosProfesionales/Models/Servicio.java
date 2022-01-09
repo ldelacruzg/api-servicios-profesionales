@@ -30,5 +30,5 @@ public class Servicio {
     private String descripcion;
 	
 	@Column(name="estado")
-    private Boolean estado;
+    private Boolean estad;
 }
