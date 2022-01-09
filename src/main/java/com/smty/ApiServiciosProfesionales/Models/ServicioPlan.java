@@ -29,7 +29,7 @@ public class ServicioPlan {
     private Short diasDeliviery;
 	
 	@Column(name="precio")
-    private Double precio;
+    private Double preci;
 	
 	
 }
