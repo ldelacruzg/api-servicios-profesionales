@@ -5,23 +5,22 @@ import lombok.Data;
 import javax.persistence.*;
 @Data
 @Entity
-@Table(name = "idiomas_personas")
+@Table(name = "personas_idiomas")
 
-public class IdiomaPersona {
+public class PersonasIdiomas {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="id_idioma_persona")
-    private int idIdioma;
-	
-	@Column(name="nivel", length = 10)//Se agregó un nuevo campo
-    private String nivel;
+	@Column(name="id_persona_idioma")
+    private int idPersonaIdioma;
 	
 	@ManyToOne
 	@JoinColumn(name="id_idioma")
-	private Idioma idioma;
+	private Idioma idIdioma;
 	
 	@ManyToOne
 	@JoinColumn(name="id_persona")
-	private Persona persona;
+	private Persona idPersona;
 	
+	@Column(name="nivel", length = 30)
+    private String nivel;	
 }
