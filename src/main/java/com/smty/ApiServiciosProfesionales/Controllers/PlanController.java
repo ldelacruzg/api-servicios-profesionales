@@ -1,4 +1,4 @@
-package com.smty.ApiServiciosProfesionales.ControllersREST;
+package com.smty.ApiServiciosProfesionales.Controllers;
 
 import com.smty.ApiServiciosProfesionales.Models.Plan;
 import com.smty.ApiServiciosProfesionales.Repositories.PlanRepository;
@@ -11,7 +11,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("api/plan")
-public class PlanREST {
+public class PlanController {
     @Autowired
     private PlanRepository planRepository;
 
@@ -25,7 +25,7 @@ public class PlanREST {
 
     // BUSCAR POR ID
     @RequestMapping(value = "{id}")
-    public ResponseEntity<Plan> finfById(@PathVariable("id")Long id){
+    public ResponseEntity<Plan> finfById(@PathVariable("id")int id){
         Optional<Plan> optional =planRepository.findById(id);
         if(optional.isPresent()) {
             return ResponseEntity.ok(optional.get());
@@ -43,7 +43,7 @@ public class PlanREST {
 
     //ELIMINAR
     @DeleteMapping(value =  "{id}")
-    public ResponseEntity<Void> delete (@PathVariable("id")Long id) {
+    public ResponseEntity<Void> delete (@PathVariable("id")Integer id) {
         planRepository.deleteById(id);
         return ResponseEntity.ok(null);
     }

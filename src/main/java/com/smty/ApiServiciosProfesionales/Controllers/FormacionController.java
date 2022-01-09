@@ -1,4 +1,4 @@
-package com.smty.ApiServiciosProfesionales.ControllersREST;
+package com.smty.ApiServiciosProfesionales.Controllers;
 import com.smty.ApiServiciosProfesionales.Models.Formacion;
 import com.smty.ApiServiciosProfesionales.Repositories.FormacionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +10,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("api/formacion")
-public class FormacionREST {
+public class FormacionController {
     @Autowired
     private FormacionRepository formacionRepository;
 
@@ -24,7 +24,7 @@ public class FormacionREST {
 
     // BUSCAR POR ID
     @RequestMapping(value = "{id}")
-    public ResponseEntity<Formacion> finfById(@PathVariable("id")Long id){
+    public ResponseEntity<Formacion> finfById(@PathVariable("id")int id){
         Optional<Formacion> optional =formacionRepository.findById(id);
         if(optional.isPresent()) {
             return ResponseEntity.ok(optional.get());
@@ -42,7 +42,7 @@ public class FormacionREST {
 
     //ELIMINAR
     @DeleteMapping(value =  "{id}")
-    public ResponseEntity<Void> delete (@PathVariable("id")Long id) {
+    public ResponseEntity<Void> delete (@PathVariable("id")int id) {
         formacionRepository.deleteById(id);
         return ResponseEntity.ok(null);
     }

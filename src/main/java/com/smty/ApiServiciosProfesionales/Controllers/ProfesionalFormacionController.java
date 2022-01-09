@@ -1,4 +1,4 @@
-package com.smty.ApiServiciosProfesionales.ControllersREST;
+package com.smty.ApiServiciosProfesionales.Controllers;
 import com.smty.ApiServiciosProfesionales.Models.ProfesionalFormacion;
 import com.smty.ApiServiciosProfesionales.Repositories.ProfesionalFormacionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,8 +9,8 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("api/formacion")
-public class ProfesionalFormacionREST {
+@RequestMapping("api/ProfesionalFormacion")
+public class ProfesionalFormacionController {
     @Autowired
     private ProfesionalFormacionRepository profesionalFormacionRepository;
 
@@ -50,7 +50,7 @@ public class ProfesionalFormacionREST {
     //ACTUALIZAR
     @PutMapping
     private ResponseEntity<ProfesionalFormacion>update(@RequestBody ProfesionalFormacion objeto){
-        Optional<ProfesionalFormacion> optional =profesionalFormacionRepository.findById(objeto.getIdProfesionalForomacion());
+        Optional<ProfesionalFormacion> optional =profesionalFormacionRepository.findById(objeto.getIdProfesionalFormacion());
         if(optional.isPresent()) {
             ProfesionalFormacion update=optional.get();
             update.setFormacion(objeto.getFormacion());

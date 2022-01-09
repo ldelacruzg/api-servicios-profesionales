@@ -1,4 +1,4 @@
-package com.smty.ApiServiciosProfesionales.ControllersREST;
+package com.smty.ApiServiciosProfesionales.Controllers;
 import com.smty.ApiServiciosProfesionales.Models.ProfesionalCertificacion;
 import com.smty.ApiServiciosProfesionales.Repositories.ProfesionalCertificacionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +10,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("api/profesionalCertificacipn")
-public class ProfesionalCertificacionREST {
+public class ProfesionalCertificacionController {
     @Autowired
     private ProfesionalCertificacionRepository profesionalCertificacionRepository;
 

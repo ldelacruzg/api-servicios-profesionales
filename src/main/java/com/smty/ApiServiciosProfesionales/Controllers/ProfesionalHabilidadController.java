@@ -1,4 +1,4 @@
-package com.smty.ApiServiciosProfesionales.ControllersREST;
+package com.smty.ApiServiciosProfesionales.Controllers;
 import com.smty.ApiServiciosProfesionales.Models.ProfesionalHabilidad;
 import com.smty.ApiServiciosProfesionales.Repositories.ProfesionalHabilidadRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,8 +9,8 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("api/habilidad")
-public class ProfesionalHabilidadREST {
+@RequestMapping("api/ProfesionalHabilidad")
+public class ProfesionalHabilidadController {
     @Autowired
     private ProfesionalHabilidadRepository profesionalHabilidadRepository;
 
