@@ -7,7 +7,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "documentos_servicios")
 
-public class DocumentosServicios {
+public class DocumentoServicio {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id_documento_servicios")
@@ -19,6 +19,6 @@ public class DocumentosServicios {
 	
 	@ManyToOne
 	@JoinColumn(name="id_documentos")
-	private Documentos documentos;
+	private Documento documentos;
 
 }

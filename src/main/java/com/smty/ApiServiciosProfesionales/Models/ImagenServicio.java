@@ -7,7 +7,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "imagen_Servicios")
 
-public class ImagenServicios {
+public class ImagenServicio {
 	
 	 @GeneratedValue(strategy = GenerationType.IDENTITY)
 		@Column(name="id_imagen_servicios")
