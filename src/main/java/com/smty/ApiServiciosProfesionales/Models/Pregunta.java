@@ -17,6 +17,6 @@ public class Pregunta {
 	@Column(name="descripcion", length = 100)
     private String descripcion;
 	
-	@Column(name="respuesta", length = 100)
+	@Column(name="respuesta", length = 10)
     private String respuesta;
 }
