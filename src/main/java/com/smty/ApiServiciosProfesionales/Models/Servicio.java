@@ -23,7 +23,7 @@ public class Servicio {
 	private PoliticaUso politicaUso;
 	
 	@ManyToOne
-	@Column(name="id_profesional")
+	@JoinColumn(name="id_profesional")
     private Profesional profesional;
 	
 	@Column(name="descripcion")
