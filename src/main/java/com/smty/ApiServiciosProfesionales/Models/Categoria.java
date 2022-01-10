@@ -11,7 +11,6 @@ public class Categoria {
 	    @Column(name = "id_categoria")
 	    private int idCategoria;
 
-	    @Column(name = "nombre", length = 50) //cambio de la longitud
+	    @Column(name = "nombre", length = 50)
 	    private String nombre;
-
 }

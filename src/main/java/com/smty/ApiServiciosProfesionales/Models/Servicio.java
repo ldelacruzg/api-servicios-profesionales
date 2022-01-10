@@ -16,19 +16,19 @@ public class Servicio {
 	
 	@ManyToOne
 	@JoinColumn(name="id_sub_categoria")
-	private SubCategoria idSubCategoria;
+	private SubCategoria subCategoria;
 	
 	@ManyToOne
 	@JoinColumn(name="id_politica_uso")
-	private PoliticaUso idPoliticaUso;
+	private PoliticaUso politicaUso;
 	
 	@ManyToOne
 	@Column(name="id_profesional")
-    private Profesional idProfesional;
+    private Profesional profesional;
 	
-	@Column(name="descripcion", length = 80)
+	@Column(name="descripcion")
     private String descripcion;
 	
 	@Column(name="estado")
-    private Boolean estad0;
+    private Boolean estado;
 }

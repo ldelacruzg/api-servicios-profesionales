@@ -7,19 +7,19 @@ import javax.persistence.*;
 @Entity
 @Table(name = "personas_idiomas")
 
-public class PersonasIdiomas {
+public class PersonaIdioma {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id_persona_idioma")
-    private int idPersonaIdioma;
+    private Long idPersonaIdioma;
 	
 	@ManyToOne
 	@JoinColumn(name="id_idioma")
-	private Idioma idIdioma;
+	private Idioma Idioma;
 	
 	@ManyToOne
 	@JoinColumn(name="id_persona")
-	private Persona idPersona;
+	private Persona Persona;
 	
 	@Column(name="nivel", length = 30)
     private String nivel;	

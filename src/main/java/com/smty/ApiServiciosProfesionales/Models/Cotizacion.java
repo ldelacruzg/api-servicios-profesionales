@@ -16,20 +16,20 @@ public class Cotizacion {
 	
 	@ManyToOne
 	@JoinColumn(name="id_cliente")
-	private Idioma idcliente;
+	private Cliente cliente;
 	
 	@ManyToOne
 	@JoinColumn(name="id_profesional")
-	private Idioma idprofesional;
+	private Profesional profesional;
 	
-	@Column(name="descripcion", length = 100)//Se agregó un nueva longitud
+	@Column(name="descripcion")
     private String descripcion;
 	
-	//@Column(name="precio", length = 100)//Se agregó un nueva longitud
-    // private decimal precio; corregir
+	@Column(name="precio")
+    private Double precio;
 	
-	@Column(name="dia")//Se agregó un nueva longitud
-    private int dia;
+	@Column(name="dia")
+    private Short dia;
 	
 	
 }

@@ -14,6 +14,6 @@ public class Ocupacion {
 	@Column(name="id_ocupacion")
     private int idOcupacion;
 	
-	@Column(name="nombre", length = 50)//Se agregó un nueva longitud
+	@Column(name="nombre", length = 80)
     private String nombre;
 }

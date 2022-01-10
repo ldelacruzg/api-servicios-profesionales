@@ -10,15 +10,15 @@ import javax.persistence.*;
 public class DocumentoServicio {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="id_documento_servicios")
-    private int idDocumentoServicios;
+	@Column(name="id_documento_servicio")
+    private int idDocumentoServicio;
 	
-	//@ManyToOne
-	//@JoinColumn(name="id_servicios")
-	//private Servicios servicios;//     falta esta tabla
+	@ManyToOne
+	@JoinColumn(name="id_servicios")
+	private Servicio servicio;
 	
 	@ManyToOne
 	@JoinColumn(name="id_documentos")
-	private Documento documentos;
+	private Documento documento;
 
 }

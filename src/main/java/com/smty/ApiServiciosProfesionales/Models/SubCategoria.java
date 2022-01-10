@@ -12,11 +12,10 @@ public class SubCategoria {
 	@Column(name="id_sub_categoria")
     private int idSubCategoria;
 	
-	
 	@ManyToOne
 	@JoinColumn(name="id_categoria")
-	private Categoria categoria;// el nombre de la clase y  minuscula 
+	private Categoria categoria;
 	
-	@Column(name="nombre", length = 50)//Se agregó un nuevo campo, cambiar en el leng
+	@Column(name="nombre", length = 50)
     private String nombre;
 }

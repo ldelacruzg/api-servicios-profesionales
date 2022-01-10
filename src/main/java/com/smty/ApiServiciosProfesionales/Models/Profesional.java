@@ -13,7 +13,7 @@ public class Profesional {
 	@Column(name ="id_profesional")
 	private Long idProfesional;
 
-	@Column(name ="url_siio_web", length = 80)
+	@Column(name ="url_sitio_web", length = 80)
 	private String urlSitioWeb;
 
 	@Column(name ="url_linkedin", length = 80)

@@ -10,15 +10,14 @@ import javax.persistence.*;
 public class ImagenServicio {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="id_imagen_servicios")
-	private int idImagenServicios;
-		
-	  //  @ManyToOne
-		//@JoinColumn(name="id_servicios") // falta 
-		//private Servicios servicios;
-		
+	@Column(name="id_imagen_servicio")
+	private int idImagenServicio;
+	
+	@ManyToOne
+	@JoinColumn(name="id_servicio")
+	private Servicio servicio;
+	
 	@ManyToOne
 	@JoinColumn(name="id_imagen")
 	private Imagen imagen;
-
 }

@@ -14,6 +14,6 @@ public class Pais {
 	@Column(name="id_pais")
     private int idPais;
 	
-	@Column(name="nombre", length = 50)//Se modificó la longitud
+	@Column(name="nombre", length = 50)
     private String nombre;
 }

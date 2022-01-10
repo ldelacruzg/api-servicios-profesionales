@@ -16,13 +16,13 @@ public class ServicioPlan {
 	
 	@ManyToOne
 	@JoinColumn(name="id_plan")
-	private Plan idPlan;
+	private Plan plan;
 	
 	@ManyToOne
 	@JoinColumn(name="id_servicio")
-	private Servicio idServicio;
+	private Servicio servicio;
 	
-	@Column(name="descripcion", length = 255)
+	@Column(name="descripcion")
     private String descripcion;
 	
 	@Column(name="dias_delivery")
@@ -30,6 +30,4 @@ public class ServicioPlan {
 	
 	@Column(name="precio")
     private Double precio;
-	
-	
 }

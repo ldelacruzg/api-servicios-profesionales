@@ -9,10 +9,10 @@ import javax.persistence.*;
 public class Documento {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="id_documentos")
-    private int idDocumentos;
+	@Column(name="id_documento")
+    private int idDocumento;
 	
-	@Column(name="url", length = 100)//Se agregó un nueva longitud
+	@Column(name="url", length = 100)
     private String url;
 
 }

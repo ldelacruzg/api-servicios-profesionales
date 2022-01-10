@@ -16,9 +16,9 @@ public class PreguntaServicio {
 	
 	@ManyToOne
 	@JoinColumn(name="id_servicio")
-	private Servicio idServicio;
+	private Servicio servicio;
 	
 	@ManyToOne
 	@JoinColumn(name="id_pregunta")
-	private Pregunta idPregunta;
+	private Pregunta pregunta;
 }

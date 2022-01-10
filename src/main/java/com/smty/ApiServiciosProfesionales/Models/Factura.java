@@ -12,15 +12,15 @@ public class Factura {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id_factura")
-    private int idFactura;
+    private Long idFactura;
 	
 	@ManyToOne
 	@JoinColumn(name="id_cliente")
-	private Cliente idCliente;
+	private Cliente Cliente;
 	
 	@ManyToOne
 	@JoinColumn(name="id_servicio")
-	private Servicio idServicio;
+	private Servicio Servicio;
 	
 	@Column(name="fecha")
     private Date fecha;
@@ -30,7 +30,4 @@ public class Factura {
 	
 	@Column(name="estado")
     private Boolean estado;
-	
-	@Column(name="descripcion", length = 80)
-    private String descripcion;
 }

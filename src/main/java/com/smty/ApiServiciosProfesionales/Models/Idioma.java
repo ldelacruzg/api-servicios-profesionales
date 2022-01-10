@@ -10,8 +10,8 @@ public class Idioma {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id_idioma")
-    private int idIdioma;
+    private int Idioma;
 	
-	@Column(name="nombre", length = 20)//cambio de longitud de los nombres
+	@Column(name="nombre", length = 30)
     private String nombre;
 }

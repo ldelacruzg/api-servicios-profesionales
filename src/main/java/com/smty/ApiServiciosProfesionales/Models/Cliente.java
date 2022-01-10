@@ -11,10 +11,10 @@ public class Cliente {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id_cliente")
-    private int idCliente;
+    private Long idCliente;
 	
 	@ManyToOne
 	@JoinColumn(name="id_persona")
-	private Idioma idpersona;
+	private Idioma idioma;
 
 }
