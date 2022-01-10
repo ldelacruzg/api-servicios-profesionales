@@ -2,8 +2,6 @@ package com.smty.ApiServiciosProfesionales.Models;
 
 import lombok.Data;
 
-import java.io.Serializable;
-
 import javax.persistence.*;
 
 @Data
@@ -21,11 +19,16 @@ public class Profesional {
 	@Column(name ="url_linkedin", length = 80)
 	private String urlLinkedin;
 
-	//private Persona persona;
-	//@ManyToOne
-	//@JoinColumn(name = "id_persona")
+	@ManyToOne
+	@JoinColumn(name = "id_persona")
+	private Persona persona;
 
-	//private Ocupacion ocupacion;
-	//@ManyToOne
-	//@JoinColumn(name = "id_ocupacion")
+	@ManyToOne
+	@JoinColumn(name = "id_ocupacion")
+	private Ocupacion ocupacion;
+
+	@ManyToOne
+	@JoinColumn(name = "id_pais")
+	private Pais pais;
+
 }
