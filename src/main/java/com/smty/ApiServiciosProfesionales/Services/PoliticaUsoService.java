@@ -1,6 +1,6 @@
 package com.smty.ApiServiciosProfesionales.Services;
 
-import com.smty.ApiServiciosProfesionales.Controllers.Models.PoliticaUso;
+import com.smty.ApiServiciosProfesionales.Models.PoliticaUso;
 import com.smty.ApiServiciosProfesionales.Repositories.PoliticaUsoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -1,6 +1,6 @@
 package com.smty.ApiServiciosProfesionales.Services;
 
-import com.smty.ApiServiciosProfesionales.Controllers.Models.Habilidad;
+import com.smty.ApiServiciosProfesionales.Models.Habilidad;
 import com.smty.ApiServiciosProfesionales.Repositories.HabilidadRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

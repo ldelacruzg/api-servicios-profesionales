@@ -1,6 +1,6 @@
 package com.smty.ApiServiciosProfesionales.Services;
 
-import com.smty.ApiServiciosProfesionales.Controllers.Models.Plan;
+import com.smty.ApiServiciosProfesionales.Models.Plan;
 import com.smty.ApiServiciosProfesionales.Repositories.PlanRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

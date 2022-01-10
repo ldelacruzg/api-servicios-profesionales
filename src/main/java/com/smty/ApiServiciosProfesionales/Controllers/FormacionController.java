@@ -1,5 +1,5 @@
 package com.smty.ApiServiciosProfesionales.Controllers;
-import com.smty.ApiServiciosProfesionales.Controllers.Models.Formacion;
+import com.smty.ApiServiciosProfesionales.Models.Formacion;
 import com.smty.ApiServiciosProfesionales.Services.FormacionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

@@ -1,6 +1,6 @@
 package com.smty.ApiServiciosProfesionales.Services;
 
-import com.smty.ApiServiciosProfesionales.Controllers.Models.Certificacion;
+import com.smty.ApiServiciosProfesionales.Models.Certificacion;
 import com.smty.ApiServiciosProfesionales.Repositories.CertificacionRepository;
 import org.springframework.stereotype.Service;
 

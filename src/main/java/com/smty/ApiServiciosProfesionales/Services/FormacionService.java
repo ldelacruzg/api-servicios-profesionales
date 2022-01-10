@@ -1,6 +1,6 @@
 package com.smty.ApiServiciosProfesionales.Services;
 
-import com.smty.ApiServiciosProfesionales.Controllers.Models.Formacion;
+import com.smty.ApiServiciosProfesionales.Models.Formacion;
 import com.smty.ApiServiciosProfesionales.Repositories.FormacionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

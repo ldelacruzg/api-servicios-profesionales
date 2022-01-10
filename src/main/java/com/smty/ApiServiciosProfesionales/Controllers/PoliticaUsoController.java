@@ -1,6 +1,6 @@
 package com.smty.ApiServiciosProfesionales.Controllers;
 
-import com.smty.ApiServiciosProfesionales.Controllers.Models.PoliticaUso;
+import com.smty.ApiServiciosProfesionales.Models.PoliticaUso;
 import com.smty.ApiServiciosProfesionales.Services.PoliticaUsoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

@@ -1,5 +1,5 @@
 package com.smty.ApiServiciosProfesionales.Controllers;
-import com.smty.ApiServiciosProfesionales.Controllers.Models.ProfesionalHabilidad;
+import com.smty.ApiServiciosProfesionales.Models.ProfesionalHabilidad;
 import com.smty.ApiServiciosProfesionales.Services.ProfesionalHabilidadService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

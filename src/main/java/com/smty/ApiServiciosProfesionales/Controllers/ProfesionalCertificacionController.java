@@ -1,5 +1,5 @@
 package com.smty.ApiServiciosProfesionales.Controllers;
-import com.smty.ApiServiciosProfesionales.Controllers.Models.ProfesionalCertificacion;
+import com.smty.ApiServiciosProfesionales.Models.ProfesionalCertificacion;
 import com.smty.ApiServiciosProfesionales.Services.ProfesionalCertificacionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
