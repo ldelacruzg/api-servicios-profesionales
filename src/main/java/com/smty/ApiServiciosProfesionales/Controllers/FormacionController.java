@@ -1,65 +1,66 @@
 package com.smty.ApiServiciosProfesionales.Controllers;
-import com.smty.ApiServiciosProfesionales.Models.Formacion;
-import com.smty.ApiServiciosProfesionales.Repositories.FormacionRepository;
+import com.smty.ApiServiciosProfesionales.Controllers.Models.Formacion;
+import com.smty.ApiServiciosProfesionales.Services.FormacionService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
-@RequestMapping("api/formacion")
+@RequestMapping("api/formaciones")
 public class FormacionController {
     @Autowired
-    private FormacionRepository formacionRepository;
+    private FormacionService formacionService;
 
     //LISTAR TODO
     @GetMapping
-    public ResponseEntity<List<Formacion>> getAll(){
-        List<Formacion>lista = formacionRepository.findAll();
-        return ResponseEntity.ok(lista);
+    public ResponseEntity<List<Formacion>> getAll() {
+        try {
+            return ResponseEntity.ok().body(formacionService.findAll());
+        } catch (Exception e) {
+            return ResponseEntity.notFound().build();
+        }
     }
-
 
     // BUSCAR POR ID
     @RequestMapping(value = "{id}")
     public ResponseEntity<Formacion> finfById(@PathVariable("id")int id){
-        Optional<Formacion> optional =formacionRepository.findById(id);
-        if(optional.isPresent()) {
-            return ResponseEntity.ok(optional.get());
-        }else {
-            return ResponseEntity.noContent().build();
+        try {
+            return ResponseEntity.ok().body(formacionService.findById(id));
+        } catch (Exception e) {
+            return ResponseEntity.notFound().build();
         }
     }
 
     //GUARDAR
     @PostMapping
-    public ResponseEntity<Formacion> create (@RequestBody Formacion objeto) {
-        Formacion newObjeto =  formacionRepository.save(objeto);
-        return ResponseEntity.ok(newObjeto);
+    public ResponseEntity<Formacion> create (@RequestBody Formacion entity) {
+        try {
+            return ResponseEntity.ok().body(formacionService.save(entity));
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().build();
+        }
     }
 
     //ELIMINAR
     @DeleteMapping(value =  "{id}")
-    public ResponseEntity<Void> delete (@PathVariable("id")int id) {
-        formacionRepository.deleteById(id);
-        return ResponseEntity.ok(null);
+    public ResponseEntity<Boolean> delete (@PathVariable int id) {
+        try {
+            return ResponseEntity.status(HttpStatus.NO_CONTENT).body(formacionService.delete(id));
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().build();
+        }
     }
 
     //ACTUALIZAR
-    @PutMapping
-    private ResponseEntity<Formacion>update(@RequestBody Formacion objeto){
-        Optional<Formacion> optional =formacionRepository.findById(objeto.getIdFormacion());
-        if(optional.isPresent()) {
-            Formacion update=optional.get();
-           // update.setIdPais(objeto.getIdPais());
-            update.setNombreInstitucion(objeto.getNombreInstitucion());
-            update.setDescripcion(objeto.getDescripcion());
-            formacionRepository.save(update);
-            return ResponseEntity.ok(update);
-        }else {
-            return ResponseEntity.notFound().build();
+    @PutMapping(value =  "{id}")
+    private ResponseEntity<Formacion>update(int id, @RequestBody Formacion entity){
+        try {
+            return ResponseEntity.ok().body(formacionService.update(id,entity));
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().build();
         }
     }
 }

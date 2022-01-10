@@ -1,64 +1,66 @@
 package com.smty.ApiServiciosProfesionales.Controllers;
-import com.smty.ApiServiciosProfesionales.Models.ProfesionalHabilidad;
-import com.smty.ApiServiciosProfesionales.Repositories.ProfesionalHabilidadRepository;
+import com.smty.ApiServiciosProfesionales.Controllers.Models.ProfesionalHabilidad;
+import com.smty.ApiServiciosProfesionales.Services.ProfesionalHabilidadService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
-@RequestMapping("api/ProfesionalHabilidad")
+@RequestMapping("api/ProfesionalesHabilidadades")
 public class ProfesionalHabilidadController {
     @Autowired
-    private ProfesionalHabilidadRepository profesionalHabilidadRepository;
+    private ProfesionalHabilidadService profesionalHabilidadService;
 
     //LISTAR TODO
     @GetMapping
-    public ResponseEntity<List<ProfesionalHabilidad>> getAll(){
-        List<ProfesionalHabilidad>lista = profesionalHabilidadRepository.findAll();
-        return ResponseEntity.ok(lista);
+    public ResponseEntity<List<ProfesionalHabilidad>> getAll() {
+        try {
+            return ResponseEntity.ok().body(profesionalHabilidadService.findAll());
+        } catch (Exception e) {
+            return ResponseEntity.notFound().build();
+        }
     }
-
 
     // BUSCAR POR ID
     @RequestMapping(value = "{id}")
     public ResponseEntity<ProfesionalHabilidad> finfById(@PathVariable("id")Long id){
-        Optional<ProfesionalHabilidad> optional =profesionalHabilidadRepository.findById(id);
-        if(optional.isPresent()) {
-            return ResponseEntity.ok(optional.get());
-        }else {
-            return ResponseEntity.noContent().build();
+        try {
+            return ResponseEntity.ok().body(profesionalHabilidadService.findById(id));
+        } catch (Exception e) {
+            return ResponseEntity.notFound().build();
         }
     }
 
     //GUARDAR
     @PostMapping
-    public ResponseEntity<ProfesionalHabilidad> create (@RequestBody ProfesionalHabilidad objeto) {
-        ProfesionalHabilidad newObjeto =  profesionalHabilidadRepository.save(objeto);
-        return ResponseEntity.ok(newObjeto);
+    public ResponseEntity<ProfesionalHabilidad> create (@RequestBody ProfesionalHabilidad entity) {
+        try {
+            return ResponseEntity.ok().body(profesionalHabilidadService.save(entity));
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().build();
+        }
     }
 
     //ELIMINAR
     @DeleteMapping(value =  "{id}")
-    public ResponseEntity<Void> delete (@PathVariable("id")Long id) {
-        profesionalHabilidadRepository.deleteById(id);
-        return ResponseEntity.ok(null);
+    public ResponseEntity<Boolean> delete (@PathVariable Long id) {
+        try {
+            return ResponseEntity.status(HttpStatus.NO_CONTENT).body(profesionalHabilidadService.delete(id));
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().build();
+        }
     }
 
     //ACTUALIZAR
-    @PutMapping
-    private ResponseEntity<ProfesionalHabilidad>update(@RequestBody ProfesionalHabilidad objeto){
-        Optional<ProfesionalHabilidad> optional =profesionalHabilidadRepository.findById(objeto.getIdProfesionalHabilidad());
-        if(optional.isPresent()) {
-            ProfesionalHabilidad update=optional.get();
-            update.setHabilidad(objeto.getHabilidad());
-            update.setNivel(objeto.getNivel());
-            profesionalHabilidadRepository.save(update);
-            return ResponseEntity.ok(update);
-        }else {
-            return ResponseEntity.notFound().build();
+    @PutMapping(value =  "{id}")
+    private ResponseEntity<ProfesionalHabilidad>update(Long id, @RequestBody ProfesionalHabilidad entity){
+        try {
+            return ResponseEntity.ok().body(profesionalHabilidadService.update(id,entity));
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().build();
         }
     }
 

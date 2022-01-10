@@ -1,66 +1,68 @@
 package com.smty.ApiServiciosProfesionales.Controllers;
 
-import com.smty.ApiServiciosProfesionales.Models.Profesional;
-import com.smty.ApiServiciosProfesionales.Repositories.ProfesionalRepository;
+import com.smty.ApiServiciosProfesionales.Controllers.Models.Profesional;
+import com.smty.ApiServiciosProfesionales.Services.ProfesionalService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
+
 
 @RestController
-@RequestMapping("api/profesional")
+@RequestMapping("api/profesionales")
 public class ProfesionalController {
     @Autowired
-    private ProfesionalRepository profesionalRepository;
+    private ProfesionalService profesionalService;
 
     //LISTAR TODO
     @GetMapping
-    public ResponseEntity<List<Profesional>> getAll(){
-        List<Profesional>lista = profesionalRepository.findAll();
-        return ResponseEntity.ok(lista);
+    public ResponseEntity<List<Profesional>> getAll() {
+        try {
+            return ResponseEntity.ok().body(profesionalService.findAll());
+        } catch (Exception e) {
+           return ResponseEntity.notFound().build();
+        }
     }
-
 
     // BUSCAR POR ID
     @RequestMapping(value = "{id}")
     public ResponseEntity<Profesional> finfById(@PathVariable("id")Long id){
-        Optional<Profesional> optional =profesionalRepository.findById(id);
-        if(optional.isPresent()) {
-            return ResponseEntity.ok(optional.get());
-        }else {
-            return ResponseEntity.noContent().build();
+        try {
+            return ResponseEntity.ok().body(profesionalService.findById(id));
+        } catch (Exception e) {
+            return ResponseEntity.notFound().build();
         }
     }
 
     //GUARDAR
     @PostMapping
-    public ResponseEntity<Profesional> create (@RequestBody Profesional objeto) {
-        Profesional newObjeto =  profesionalRepository.save(objeto);
-        return ResponseEntity.ok(newObjeto);
+    public ResponseEntity<Profesional> create (@RequestBody Profesional entity) {
+        try {
+            return ResponseEntity.ok().body(profesionalService.save(entity));
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().build();
+        }
     }
 
     //ELIMINAR
     @DeleteMapping(value =  "{id}")
-    public ResponseEntity<Void> delete (@PathVariable("id")Long id) {
-        profesionalRepository.deleteById(id);
-        return ResponseEntity.ok(null);
+    public ResponseEntity<Boolean> delete (@PathVariable Long id) {
+        try {
+            return ResponseEntity.status(HttpStatus.NO_CONTENT).body(profesionalService.delete(id));
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().build();
+        }
     }
 
     //ACTUALIZAR
-    @PutMapping
-    private ResponseEntity<Profesional>update(@RequestBody Profesional objeto){
-        Optional<Profesional> optional =profesionalRepository.findById(objeto.getIdProfesional());
-        if(optional.isPresent()) {
-            Profesional update=optional.get();
-            update.setUrlSitioWeb(objeto.getUrlSitioWeb());
-            update.setUrlLinkedin(objeto.getUrlLinkedin());
-            //update.setIdPersona(objeto.getIdPersona());
-            profesionalRepository.save(update);
-            return ResponseEntity.ok(update);
-        }else {
-            return ResponseEntity.notFound().build();
+    @PutMapping(value =  "{id}")
+    private ResponseEntity<Profesional>update(Long id, @RequestBody Profesional entity){
+        try {
+            return ResponseEntity.ok().body(profesionalService.update(id,entity));
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().build();
         }
     }
 }

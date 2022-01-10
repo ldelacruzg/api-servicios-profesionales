@@ -1,28 +1,24 @@
 package com.smty.ApiServiciosProfesionales.Controllers;
 
-import com.smty.ApiServiciosProfesionales.Controllers.Models.Certificacion;
-import com.smty.ApiServiciosProfesionales.Services.CertificacionService;
+import com.smty.ApiServiciosProfesionales.Controllers.Models.PoliticaUso;
+import com.smty.ApiServiciosProfesionales.Services.PoliticaUsoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
-@RequestMapping("api/certificaciones")
-public class CertificacionController {
+@RequestMapping("api/politicasDeUso")
+public class PoliticaUsoController {
     @Autowired
-    private CertificacionService certificacionService;
+    private PoliticaUsoService politicaUsoService;
 
     //LISTAR TODO
     @GetMapping
-    public ResponseEntity<List<Certificacion>> getAll() {
+    public ResponseEntity<List<PoliticaUso>> getAll() {
         try {
-            return ResponseEntity.ok().body(certificacionService.findAll());
+            return ResponseEntity.ok().body(politicaUsoService.findAll());
         } catch (Exception e) {
             return ResponseEntity.notFound().build();
         }
@@ -30,9 +26,9 @@ public class CertificacionController {
 
     // BUSCAR POR ID
     @RequestMapping(value = "{id}")
-    public ResponseEntity<Certificacion> finfById(@PathVariable("id")int id){
+    public ResponseEntity<PoliticaUso> finfById(@PathVariable("id")int id){
         try {
-            return ResponseEntity.ok().body(certificacionService.findById(id));
+            return ResponseEntity.ok().body(politicaUsoService.findById(id));
         } catch (Exception e) {
             return ResponseEntity.notFound().build();
         }
@@ -40,9 +36,9 @@ public class CertificacionController {
 
     //GUARDAR
     @PostMapping
-    public ResponseEntity<Certificacion> create (@RequestBody Certificacion entity) {
+    public ResponseEntity<PoliticaUso> create (@RequestBody PoliticaUso entity) {
         try {
-            return ResponseEntity.ok().body(certificacionService.save(entity));
+            return ResponseEntity.ok().body(politicaUsoService.save(entity));
         } catch (Exception e) {
             return ResponseEntity.badRequest().build();
         }
@@ -52,7 +48,7 @@ public class CertificacionController {
     @DeleteMapping(value =  "{id}")
     public ResponseEntity<Boolean> delete (@PathVariable int id) {
         try {
-            return ResponseEntity.status(HttpStatus.NO_CONTENT).body(certificacionService.delete(id));
+            return ResponseEntity.status(HttpStatus.NO_CONTENT).body(politicaUsoService.delete(id));
         } catch (Exception e) {
             return ResponseEntity.badRequest().build();
         }
@@ -60,12 +56,11 @@ public class CertificacionController {
 
     //ACTUALIZAR
     @PutMapping(value =  "{id}")
-    private ResponseEntity<Certificacion>update(int id, @RequestBody Certificacion entity){
+    private ResponseEntity<PoliticaUso>update(int id, @RequestBody PoliticaUso entity){
         try {
-            return ResponseEntity.ok().body(certificacionService.update(id,entity));
+            return ResponseEntity.ok().body(politicaUsoService.update(id,entity));
         } catch (Exception e) {
             return ResponseEntity.badRequest().build();
         }
     }
-
 }

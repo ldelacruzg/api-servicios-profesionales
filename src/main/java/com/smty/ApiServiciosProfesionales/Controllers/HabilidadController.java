@@ -1,67 +1,70 @@
 package com.smty.ApiServiciosProfesionales.Controllers;
 
-import com.smty.ApiServiciosProfesionales.Models.Habilidad;
-import com.smty.ApiServiciosProfesionales.Repositories.HabilidadRepository;
+import com.smty.ApiServiciosProfesionales.Controllers.Models.Habilidad;
+import com.smty.ApiServiciosProfesionales.Services.HabilidadService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 
 import java.util.List;
-import java.util.Optional;
+
 
 @RestController
-@RequestMapping("api/habilidad")
+@RequestMapping("api/habilidades")
 public class HabilidadController {
     @Autowired
-    private HabilidadRepository habilidadRepository ;
+    private HabilidadService habilidadService;
 
     //LISTAR TODO
     @GetMapping
-    public ResponseEntity<List<Habilidad>> getAll(){
-        List<Habilidad>lista = habilidadRepository.findAll();
-        return ResponseEntity.ok(lista);
+    public ResponseEntity<List<Habilidad>> getAll() {
+        try {
+            return ResponseEntity.ok().body(habilidadService.findAll());
+        } catch (Exception e) {
+            return ResponseEntity.notFound().build();
+        }
     }
-
 
     // BUSCAR POR ID
     @RequestMapping(value = "{id}")
     public ResponseEntity<Habilidad> finfById(@PathVariable("id")int id){
-        Optional<Habilidad> optional =habilidadRepository.findById(id);
-        if(optional.isPresent()) {
-            return ResponseEntity.ok(optional.get());
-        }else {
-            return ResponseEntity.noContent().build();
+        try {
+            return ResponseEntity.ok().body(habilidadService.findById(id));
+        } catch (Exception e) {
+            return ResponseEntity.notFound().build();
         }
     }
 
     //GUARDAR
     @PostMapping
-    public ResponseEntity<Habilidad> create (@RequestBody Habilidad objeto) {
-        Habilidad newObjeto =  habilidadRepository.save(objeto);
-        return ResponseEntity.ok(newObjeto);
+    public ResponseEntity<Habilidad> create (@RequestBody Habilidad entity) {
+        try {
+            return ResponseEntity.ok().body(habilidadService.save(entity));
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().build();
+        }
     }
 
     //ELIMINAR
     @DeleteMapping(value =  "{id}")
-    public ResponseEntity<Void> delete (@PathVariable("id")int id) {
-        habilidadRepository.deleteById(id);
-        return ResponseEntity.ok(null);
-    }
-
-    //ACTUALIZAR
-    @PutMapping
-    private ResponseEntity<Habilidad>update(@RequestBody Habilidad objeto){
-        Optional<Habilidad> optional =habilidadRepository.findById(objeto.getIdHabilidad());
-        if(optional.isPresent()) {
-            Habilidad update=optional.get();
-            update.setNombre(objeto.getNombre());
-            habilidadRepository.save(update);
-            return ResponseEntity.ok(update);
-        }else {
-            return ResponseEntity.notFound().build();
+    public ResponseEntity<Boolean> delete (@PathVariable int id) {
+        try {
+            return ResponseEntity.status(HttpStatus.NO_CONTENT).body(habilidadService.delete(id));
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().build();
         }
     }
 
+    //ACTUALIZAR
+    @PutMapping(value =  "{id}")
+    private ResponseEntity<Habilidad>update(int id, @RequestBody Habilidad entity){
+        try {
+            return ResponseEntity.ok().body(habilidadService.update(id,entity));
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().build();
+        }
+    }
 
 }
