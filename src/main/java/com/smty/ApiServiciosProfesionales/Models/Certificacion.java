@@ -6,7 +6,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 @Data
 @Entity
-@Table(name = "profesionales_habilidades")
+@Table(name = "certificaciones")
 public class Certificacion implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
