@@ -36,6 +36,12 @@ public class Persona {
 	
 	@Column(name="clave", length = 15)
     private String clave;
+
+	@Column(name="dni", length = 15)
+	private String dni;
+
+	@Column(name="email", length = 50)
+	private String email;
 	
 	@ManyToOne
 	@JoinColumn(name="id_pais")

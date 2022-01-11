@@ -27,5 +27,4 @@ public class Profesional {
 	@JoinColumn(name = "id_ocupacion")
 	private Ocupacion ocupacion;
 
-
 }
