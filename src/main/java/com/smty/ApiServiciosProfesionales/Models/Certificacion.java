@@ -16,9 +16,5 @@ public class Certificacion {
     @Column(name = "nombre", length = 80)
     private String nombre;
 
-    @ManyToOne
-    @JoinColumn(name = "id_pais")
-    private Pais pais ;
-
 
 }
