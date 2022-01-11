@@ -3,16 +3,15 @@ package com.smty.ApiServiciosProfesionales.Models;
 import lombok.Data;
 
 import javax.persistence.*;
-
 @Data
 @Entity
-@Table(name = "habilidades")
-public class Habilidad {
-    @Id
+@Table(name = "idiomas")
+public class Idioma {
+	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name ="id_habilidad", length = 50)
-    private int idHabilidad;
-
-    @Column(name ="nombre")
+	@Column(name="id_idioma")
+    private int Idioma;
+	
+	@Column(name="nombre", length = 30)
     private String nombre;
 }
