@@ -26,6 +26,9 @@ public class Servicio {
 	@JoinColumn(name="id_profesional")
     private Profesional profesional;
 	
+	@Column(name="nombre")
+    private String nombre;
+	
 	@Column(name="descripcion")
     private String descripcion;
 	
