@@ -24,7 +24,7 @@ public class ProfesionalCertificacionService {
         }
     }
 
-    //Este metodo permite: Actualizar un profesionalCertificacion mediante su ID.
+    //Este metodo permite: Buscar un profesionalCertificacion mediante su ID.
     @Transactional
     public ProfesionalCertificacion findById(Long id) throws Exception{
         try {

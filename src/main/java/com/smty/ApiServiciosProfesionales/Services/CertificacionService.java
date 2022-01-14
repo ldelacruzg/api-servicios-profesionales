@@ -22,7 +22,7 @@ public class CertificacionService {
         }
     }
 
-    //Este metodo permite: Actualizar un certificacion mediante su ID.
+    //Este metodo permite: Buscar un certificacion mediante su ID.
     @Transactional
     public Certificacion findById(int id) throws Exception{
         try {

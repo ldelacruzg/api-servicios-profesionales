@@ -24,7 +24,7 @@ public class ProfesionalService {
         }
     }
 
-    //Este metodo permite: Actualizar un profesional mediante su ID.
+    //Este metodo permite: Buscar un profesional mediante su ID.
     @Transactional
     public Profesional findById(Long id) throws Exception{
         try {

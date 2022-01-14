@@ -23,7 +23,7 @@ public class FormacionService {
         }
     }
 
-    //Este metodo permite: Actualizar un formacion mediante su ID.
+    //Este metodo permite: Buscar un formacion mediante su ID.
     @Transactional
     public Formacion findById(int id) throws Exception{
         try {

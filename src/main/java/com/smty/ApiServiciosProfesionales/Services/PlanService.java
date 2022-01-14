@@ -24,7 +24,7 @@ public class PlanService {
         }
     }
 
-    //Este metodo permite: Actualizar un plan mediante su ID.
+    //Este metodo permite: Buscar un plan mediante su ID.
     @Transactional
     public Plan findById(int id) throws Exception{
         try {

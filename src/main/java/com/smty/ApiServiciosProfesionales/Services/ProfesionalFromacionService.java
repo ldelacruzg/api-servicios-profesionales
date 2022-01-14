@@ -25,7 +25,7 @@ public class ProfesionalFromacionService {
         }
     }
 
-    //Este metodo permite: Actualizar un profesionalHabilidad mediante su ID.
+    //Este metodo permite: Buscar un profesionalHabilidad mediante su ID.
     @Transactional
     public ProfesionalFormacion findById(Long id) throws Exception{
         try {

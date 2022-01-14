@@ -24,7 +24,7 @@ public class HabilidadService {
         }
     }
 
-    //Este metodo permite: Actualizar un habilidad mediante su ID.
+    //Este metodo permite: Buscar un habilidad mediante su ID.
     @Transactional
     public Habilidad findById(int id) throws Exception{
         try {

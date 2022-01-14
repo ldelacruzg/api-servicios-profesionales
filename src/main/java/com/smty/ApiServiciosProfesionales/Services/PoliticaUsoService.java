@@ -24,7 +24,7 @@ public class PoliticaUsoService {
         }
     }
 
-    //Este metodo permite: Actualizar un politicaUso mediante su ID.
+    //Este metodo permite: Buscar un politicaUso mediante su ID.
     @Transactional
     public PoliticaUso findById(int id) throws Exception{
         try {
