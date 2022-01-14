@@ -34,7 +34,7 @@ public class Persona {
 	@Column(name="username", length = 20)
     private String username;
 	
-	@Column(name="clave", length = 15)
+	@Column(name="clave")
     private String clave;
 
 	@Column(name="dni", length = 15)
