@@ -30,7 +30,7 @@ public class PersonaIdiomaService {
 		}
 	}
 	
-	//Este metodo permite: Actualizar un plan mediante su ID.
+	//Este metodo permite: Actualizar una PersonaIdioma mediante su ID.
 	@Transactional
 	public PersonaIdioma findById(Long id) throws Exception
 	{

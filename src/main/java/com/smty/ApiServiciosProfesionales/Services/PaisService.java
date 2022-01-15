@@ -13,7 +13,6 @@ import com.smty.ApiServiciosProfesionales.Repositories.PaisRepository;
 
 @Service
 public class PaisService {
-	
 	@Autowired
 	private PaisRepository paisRepository;
 	
@@ -31,7 +30,7 @@ public class PaisService {
 		}
 	}
 	
-	//Este metodo permite: Actualizar un plan mediante su ID.
+	//Este metodo permite: Actualizar un país mediante su ID.
 	@Transactional
 	public Pais findById(int id) throws Exception
 	{
@@ -46,7 +45,7 @@ public class PaisService {
 	    }
 	}
 
-    //Este metodo permite: guardar.
+    //Este metodo permite: guardar
 	@Transactional
 	public Pais save(Pais entity) throws Exception
 	{

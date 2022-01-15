@@ -30,7 +30,7 @@ public class FacturaService {
 		}
 	}
 	
-	//Este metodo permite: Actualizar un plan mediante su ID.
+	//Este metodo permite: Actualizar una factura mediante su ID.
 	@Transactional
 	public Factura findById(long id) throws Exception
 	{

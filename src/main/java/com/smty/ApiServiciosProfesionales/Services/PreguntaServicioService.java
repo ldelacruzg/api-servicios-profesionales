@@ -30,7 +30,7 @@ public class PreguntaServicioService {
 		}
 	}
 	
-	//Este metodo permite: Actualizar un plan mediante su ID.
+	//Este metodo permite: Actualizar una PreguntaServicio mediante su ID.
 	@Transactional
 	public PreguntaServicio findById(Long id) throws Exception
 	{

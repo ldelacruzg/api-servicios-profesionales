@@ -14,7 +14,9 @@ import com.smty.ApiServiciosProfesionales.Repositories.ServicioRepository;
 @Service
 public class ServicioService {
 	@Autowired
-	private ServicioRepository servicioRepository;//Este metodo permite listar todos los registro de la entidad.
+	private ServicioRepository servicioRepository;
+	
+	//Este metodo permite listar todos los registro de la entidad.
 	@Transactional
 	public List<Servicio> findAll() throws Exception
 	{
@@ -28,7 +30,7 @@ public class ServicioService {
 		}
 	}
 	
-	//Este metodo permite: Actualizar un plan mediante su ID.
+	//Este metodo permite: Actualizar un servicio mediante su ID.
 	@Transactional
 	public Servicio findById(Long id) throws Exception
 	{

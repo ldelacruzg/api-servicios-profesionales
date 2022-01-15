@@ -30,7 +30,7 @@ public class PreguntaService {
 		}
 	}
 	
-	//Este metodo permite: Actualizar un plan mediante su ID.
+	//Este metodo permite: Actualizar una pregunta mediante su ID.
 	@Transactional
 	public Pregunta findById(int id) throws Exception
 	{
@@ -45,7 +45,7 @@ public class PreguntaService {
 	    }
 	}
 
-    //Este metodo permite: guardar.
+    //Este metodo permite: guardar
 	@Transactional
 	public Pregunta save(Pregunta entity) throws Exception
 	{
@@ -77,7 +77,7 @@ public class PreguntaService {
         }
     }
 
-    //Este metodo permite: Eliminar mediante su ID.
+    //Este metodo permite: Eliminar mediante su ID
     @Transactional
     public boolean delete(int id) throws Exception
     {

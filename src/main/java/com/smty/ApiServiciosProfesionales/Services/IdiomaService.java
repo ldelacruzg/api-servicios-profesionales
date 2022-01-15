@@ -16,8 +16,8 @@ public class IdiomaService {
 	@Autowired
 	private IdiomaRepository idiomaRepository;
 	
-	@Transactional
 	//Este metodo permite listar todos los registro de la entidad.
+	@Transactional
 	public List<Idioma> findAll() throws Exception
 	{
 		try
@@ -30,7 +30,7 @@ public class IdiomaService {
 		}
 	}
 	
-	//Este metodo permite: Actualizar un plan mediante su ID.
+	//Este metodo permite: Actualizar un idioma mediante su ID.
     @Transactional
     public Idioma findById(int id) throws Exception
     {
