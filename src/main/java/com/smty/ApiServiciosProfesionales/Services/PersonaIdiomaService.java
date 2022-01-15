@@ -32,7 +32,7 @@ public class PersonaIdiomaService {
 	
 	//Este metodo permite: Actualizar un plan mediante su ID.
 	@Transactional
-	public PersonaIdioma findById(int id) throws Exception
+	public PersonaIdioma findById(Long id) throws Exception
 	{
 	    try
 	    {
@@ -62,7 +62,7 @@ public class PersonaIdiomaService {
 
     //Este metodo permite: Actualizar mediante ID
     @Transactional
-    public PersonaIdioma update(int id, PersonaIdioma entity) throws Exception
+    public PersonaIdioma update(Long id, PersonaIdioma entity) throws Exception
     {
         try
         {
@@ -79,7 +79,7 @@ public class PersonaIdiomaService {
 
     //Este metodo permite: Eliminar mediante su ID.
     @Transactional
-    public boolean delete(int id) throws Exception
+    public boolean delete(Long id) throws Exception
     {
         try
         {
