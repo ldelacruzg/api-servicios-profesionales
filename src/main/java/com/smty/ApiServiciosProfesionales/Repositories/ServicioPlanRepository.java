@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.smty.ApiServiciosProfesionales.Models.ServicioPlan;
 
 @Repository
-public interface ServicioPlanRepository extends JpaRepository<ServicioPlan, Integer>{
+public interface ServicioPlanRepository extends JpaRepository<ServicioPlan, Long>{
 
 }

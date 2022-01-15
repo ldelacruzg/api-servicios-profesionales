@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.smty.ApiServiciosProfesionales.Models.PreguntaServicio;
 
 @Repository
-public interface PreguntaServicioRepository extends JpaRepository<PreguntaServicio, Integer>{
+public interface PreguntaServicioRepository extends JpaRepository<PreguntaServicio, Long>{
 
 }

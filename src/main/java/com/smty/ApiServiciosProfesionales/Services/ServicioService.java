@@ -30,7 +30,7 @@ public class ServicioService {
 	
 	//Este metodo permite: Actualizar un plan mediante su ID.
 	@Transactional
-	public Servicio findById(int id) throws Exception
+	public Servicio findById(Long id) throws Exception
 	{
 	    try
 	    {
@@ -60,7 +60,7 @@ public class ServicioService {
 
     //Este metodo permite: Actualizar mediante ID
     @Transactional
-    public Servicio update(int id, Servicio entity) throws Exception
+    public Servicio update(Long id, Servicio entity) throws Exception
     {
         try
         {
@@ -77,7 +77,7 @@ public class ServicioService {
 
     //Este metodo permite: Eliminar mediante su ID.
     @Transactional
-    public boolean delete(int id) throws Exception
+    public boolean delete(Long id) throws Exception
     {
         try
         {
