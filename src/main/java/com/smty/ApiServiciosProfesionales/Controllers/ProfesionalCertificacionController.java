@@ -56,7 +56,7 @@ public class ProfesionalCertificacionController {
 
     //ACTUALIZAR
     @PutMapping(value =  "{id}")
-    private ResponseEntity<ProfesionalCertificacion>update(Long id, @RequestBody ProfesionalCertificacion entity){
+    private ResponseEntity<ProfesionalCertificacion>update(@PathVariable Long id, @RequestBody ProfesionalCertificacion entity){
         try {
             return ResponseEntity.ok().body(profesionalCertificacionService.update(id,entity));
         } catch (Exception e) {

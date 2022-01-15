@@ -59,7 +59,7 @@ public class HabilidadController {
 
     //ACTUALIZAR
     @PutMapping(value =  "{id}")
-    private ResponseEntity<Habilidad>update(int id, @RequestBody Habilidad entity){
+    private ResponseEntity<Habilidad>update(@PathVariable int id, @RequestBody Habilidad entity){
         try {
             return ResponseEntity.ok().body(habilidadService.update(id,entity));
         } catch (Exception e) {

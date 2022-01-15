@@ -56,7 +56,7 @@ public class FormacionController {
 
     //ACTUALIZAR
     @PutMapping(value =  "{id}")
-    private ResponseEntity<Formacion>update(int id, @RequestBody Formacion entity){
+    private ResponseEntity<Formacion>update(@PathVariable int id, @RequestBody Formacion entity){
         try {
             return ResponseEntity.ok().body(formacionService.update(id,entity));
         } catch (Exception e) {

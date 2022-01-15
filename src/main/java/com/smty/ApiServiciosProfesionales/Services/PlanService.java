@@ -18,7 +18,7 @@ public class PlanService {
     @Transactional
     public List<Plan> findAll() throws Exception{
         try {
-            return (List<Plan>)  planRepository.findAll();
+            return planRepository.findAll();
         }catch (Exception e){
             throw  new Exception(e.getMessage());
         }
@@ -52,7 +52,7 @@ public class PlanService {
         try {
             Optional<Plan> entityOptional = planRepository.findById(id);
             Plan plan = entityOptional.get();
-            plan = planRepository.save(plan);
+            plan = planRepository.save(entity);
             return  plan;
         }catch (Exception e){
             throw  new Exception(e.getMessage());

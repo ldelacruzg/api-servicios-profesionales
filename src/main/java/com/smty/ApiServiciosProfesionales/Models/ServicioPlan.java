@@ -3,6 +3,8 @@ package com.smty.ApiServiciosProfesionales.Models;
 import lombok.Data;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
+
 @Data
 @Entity
 @Table(name = "servicios_planes")
@@ -21,13 +23,16 @@ public class ServicioPlan {
 	@ManyToOne
 	@JoinColumn(name="id_servicio")
 	private Servicio servicio;
-	
+
+	@NotEmpty
 	@Column(name="descripcion")
     private String descripcion;
-	
+
+	@NotEmpty
 	@Column(name="dias_delivery")
     private Short diasDeliviery;
-	
+
+	@NotEmpty
 	@Column(name="precio")
     private Double precio;
 }

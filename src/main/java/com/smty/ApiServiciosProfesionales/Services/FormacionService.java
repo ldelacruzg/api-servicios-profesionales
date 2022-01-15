@@ -17,7 +17,7 @@ public class FormacionService {
     @Transactional
     public List<Formacion> findAll() throws Exception{
         try {
-            return (List<Formacion>)  formacionRepository.findAll();
+            return formacionRepository.findAll();
         }catch (Exception e){
             throw  new Exception(e.getMessage());
         }
@@ -51,7 +51,7 @@ public class FormacionService {
         try {
             Optional<Formacion> entityOptional = formacionRepository.findById(id);
             Formacion formacion = entityOptional.get();
-            formacion = formacionRepository.save(formacion);
+            formacion = formacionRepository.save(entity);
             return  formacion;
         }catch (Exception e){
             throw  new Exception(e.getMessage());

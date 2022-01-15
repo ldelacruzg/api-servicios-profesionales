@@ -18,7 +18,7 @@ public class ProfesionalHabilidadService {
     @Transactional
     public List<ProfesionalHabilidad> findAll() throws Exception{
         try {
-            return (List<ProfesionalHabilidad>)  profesionalHabilidadRepository.findAll();
+            return profesionalHabilidadRepository.findAll();
         }catch (Exception e){
             throw  new Exception(e.getMessage());
         }
@@ -52,7 +52,7 @@ public class ProfesionalHabilidadService {
         try {
             Optional<ProfesionalHabilidad> entityOptional = profesionalHabilidadRepository.findById(id);
             ProfesionalHabilidad profesionalHabilidad = entityOptional.get();
-            profesionalHabilidad = profesionalHabilidadRepository.save(profesionalHabilidad);
+            profesionalHabilidad = profesionalHabilidadRepository.save(entity);
             return  profesionalHabilidad;
         }catch (Exception e){
             throw  new Exception(e.getMessage());

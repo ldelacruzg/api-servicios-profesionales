@@ -18,7 +18,7 @@ public class PoliticaUsoService {
     @Transactional
     public List<PoliticaUso> findAll() throws Exception{
         try {
-            return (List<PoliticaUso>)  politicaUsoRepository.findAll();
+            return politicaUsoRepository.findAll();
         }catch (Exception e){
             throw  new Exception(e.getMessage());
         }
@@ -52,7 +52,7 @@ public class PoliticaUsoService {
         try {
             Optional<PoliticaUso> entityOptional = politicaUsoRepository.findById(id);
             PoliticaUso politicaUso = entityOptional.get();
-            politicaUso = politicaUsoRepository.save(politicaUso);
+            politicaUso = politicaUsoRepository.save(entity);
             return  politicaUso;
         }catch (Exception e){
             throw  new Exception(e.getMessage());

@@ -3,6 +3,8 @@ package com.smty.ApiServiciosProfesionales.Models;
 import lombok.Data;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
+
 @Data
 @Entity
 @Table(name = "sub_categorias")
@@ -15,7 +17,8 @@ public class SubCategoria {
 	@ManyToOne
 	@JoinColumn(name="id_categoria")
 	private Categoria categoria;
-	
+
+	@NotEmpty
 	@Column(name="nombre", length = 50)
     private String nombre;
 }

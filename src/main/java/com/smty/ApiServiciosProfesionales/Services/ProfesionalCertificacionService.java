@@ -18,7 +18,7 @@ public class ProfesionalCertificacionService {
     @Transactional
     public List<ProfesionalCertificacion> findAll() throws Exception{
         try {
-            return (List<ProfesionalCertificacion>)  profesionalCertificacionRepository.findAll();
+            return profesionalCertificacionRepository.findAll();
         }catch (Exception e){
             throw  new Exception(e.getMessage());
         }
@@ -52,7 +52,7 @@ public class ProfesionalCertificacionService {
         try {
             Optional<ProfesionalCertificacion> entityOptional = profesionalCertificacionRepository.findById(id);
             ProfesionalCertificacion profesionalCertificacion = entityOptional.get();
-            profesionalCertificacion = profesionalCertificacionRepository.save(profesionalCertificacion);
+            profesionalCertificacion = profesionalCertificacionRepository.save(entity);
             return  profesionalCertificacion;
         }catch (Exception e){
             throw  new Exception(e.getMessage());

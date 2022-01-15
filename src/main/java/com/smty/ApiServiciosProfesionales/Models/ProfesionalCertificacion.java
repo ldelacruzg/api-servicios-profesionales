@@ -3,6 +3,7 @@ package com.smty.ApiServiciosProfesionales.Models;
 import lombok.Data;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 import java.util.Date;
 
 @Data
@@ -14,6 +15,7 @@ public class ProfesionalCertificacion {
     @Column(name ="id_profesional_certificacion")
     private Long idProfesionalCertificacion;
 
+    @NotEmpty
     @Column(name ="year")
     private Date year;
 

@@ -60,7 +60,7 @@ public class CertificacionController {
 
     //ACTUALIZAR
     @PutMapping(value =  "{id}")
-    private ResponseEntity<Certificacion>update(int id, @RequestBody Certificacion entity){
+    private ResponseEntity<Certificacion>update(@PathVariable int id, @RequestBody Certificacion entity){
         try {
             return ResponseEntity.ok().body(certificacionService.update(id,entity));
         } catch (Exception e) {

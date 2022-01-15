@@ -3,6 +3,7 @@ package com.smty.ApiServiciosProfesionales.Models;
 import lombok.Data;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 
 @Data
 @Entity
@@ -13,6 +14,7 @@ public class Plan {
     @Column(name ="id_plan")
     private int idPlan;
 
+    @NotEmpty
     @Column(name ="nombre", length = 50)
     private String nombre;
 }

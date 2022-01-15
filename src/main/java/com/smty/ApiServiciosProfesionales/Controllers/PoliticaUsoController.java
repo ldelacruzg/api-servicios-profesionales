@@ -8,8 +8,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
-@RequestMapping("api/politicasDeUso")
+@RestController
+@RequestMapping("api/politicasdeuso")
 public class PoliticaUsoController {
     @Autowired
     private PoliticaUsoService politicaUsoService;
@@ -56,7 +56,7 @@ public class PoliticaUsoController {
 
     //ACTUALIZAR
     @PutMapping(value =  "{id}")
-    private ResponseEntity<PoliticaUso>update(int id, @RequestBody PoliticaUso entity){
+    private ResponseEntity<PoliticaUso>update(@PathVariable int id, @RequestBody PoliticaUso entity){
         try {
             return ResponseEntity.ok().body(politicaUsoService.update(id,entity));
         } catch (Exception e) {

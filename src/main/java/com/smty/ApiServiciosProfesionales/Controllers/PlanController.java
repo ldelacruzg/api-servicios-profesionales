@@ -27,7 +27,7 @@ public class PlanController {
 
     // BUSCAR POR ID
     @RequestMapping(value = "{id}")
-    public ResponseEntity<Plan> finfById(@PathVariable("id")int id){
+    public ResponseEntity<Plan> finfById(@PathVariable("id") int id) {
         try {
             return ResponseEntity.ok().body(planService.findById(id));
         } catch (Exception e) {
@@ -37,7 +37,7 @@ public class PlanController {
 
     //GUARDAR
     @PostMapping
-    public ResponseEntity<Plan> create (@RequestBody Plan entity) {
+    public ResponseEntity<Plan> create(@RequestBody Plan entity) {
         try {
             return ResponseEntity.ok().body(planService.save(entity));
         } catch (Exception e) {
@@ -46,8 +46,8 @@ public class PlanController {
     }
 
     //ELIMINAR
-    @DeleteMapping(value =  "{id}")
-    public ResponseEntity<Boolean> delete (@PathVariable int id) {
+    @DeleteMapping(value = "{id}")
+    public ResponseEntity<Boolean> delete(@PathVariable int id) {
         try {
             return ResponseEntity.status(HttpStatus.NO_CONTENT).body(planService.delete(id));
         } catch (Exception e) {
@@ -56,10 +56,10 @@ public class PlanController {
     }
 
     //ACTUALIZAR
-    @PutMapping(value =  "{id}")
-    private ResponseEntity<Plan>update(int id, @RequestBody Plan entity){
+    @PutMapping(value = "{id}")
+    public ResponseEntity<Plan> update(@PathVariable int id, @RequestBody Plan entity) {
         try {
-            return ResponseEntity.ok().body(planService.update(id,entity));
+            return ResponseEntity.ok().body(planService.update(id, entity));
         } catch (Exception e) {
             return ResponseEntity.badRequest().build();
         }

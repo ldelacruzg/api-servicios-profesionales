@@ -18,7 +18,7 @@ public class ProfesionalService {
     @Transactional
     public List<Profesional> findAll() throws Exception{
         try {
-            return (List<Profesional>)  profesionalRepository.findAll();
+            return profesionalRepository.findAll();
         }catch (Exception e){
             throw  new Exception(e.getMessage());
         }

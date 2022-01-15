@@ -18,7 +18,7 @@ public class HabilidadService {
     @Transactional
     public List<Habilidad> findAll() throws Exception{
         try {
-            return (List<Habilidad>)  habilidadRepository.findAll();
+            return habilidadRepository.findAll();
         }catch (Exception e){
             throw  new Exception(e.getMessage());
         }
@@ -52,7 +52,7 @@ public class HabilidadService {
         try {
             Optional<Habilidad> entityOptional = habilidadRepository.findById(id);
             Habilidad habilidad = entityOptional.get();
-            habilidad = habilidadRepository.save(habilidad);
+            habilidad = habilidadRepository.save(entity);
             return  habilidad;
         }catch (Exception e){
             throw  new Exception(e.getMessage());

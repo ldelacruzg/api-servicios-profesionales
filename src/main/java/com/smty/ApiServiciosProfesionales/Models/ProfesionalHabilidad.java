@@ -3,6 +3,7 @@ package com.smty.ApiServiciosProfesionales.Models;
 import lombok.Data;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 
 @Data
 @Entity
@@ -13,6 +14,7 @@ public class ProfesionalHabilidad {
     @Column(name ="id_profesional_habilidad")
     private Long idProfesionalHabilidad;
 
+    @NotEmpty
     @Column(name ="nivel", length = 30)
     private String nivel;
 

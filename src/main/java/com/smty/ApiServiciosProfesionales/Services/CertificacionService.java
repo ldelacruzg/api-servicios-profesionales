@@ -16,7 +16,7 @@ public class CertificacionService {
     @Transactional
     public List<Certificacion> findAll() throws Exception{
         try {
-            return (List<Certificacion>)  certificacionRepository.findAll();
+            return certificacionRepository.findAll();
         }catch (Exception e){
             throw  new Exception(e.getMessage());
         }
@@ -50,7 +50,7 @@ public class CertificacionService {
         try {
             Optional<Certificacion> entityOptional = certificacionRepository.findById(id);
             Certificacion certificacion = entityOptional.get();
-            certificacion = certificacionRepository.save(certificacion);
+            certificacion = certificacionRepository.save(entity);
             return  certificacion;
         }catch (Exception e){
             throw  new Exception(e.getMessage());

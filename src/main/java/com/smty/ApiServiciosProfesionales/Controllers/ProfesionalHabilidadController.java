@@ -56,7 +56,7 @@ public class ProfesionalHabilidadController {
 
     //ACTUALIZAR
     @PutMapping(value =  "{id}")
-    private ResponseEntity<ProfesionalHabilidad>update(Long id, @RequestBody ProfesionalHabilidad entity){
+    private ResponseEntity<ProfesionalHabilidad>update(@PathVariable Long id, @RequestBody ProfesionalHabilidad entity){
         try {
             return ResponseEntity.ok().body(profesionalHabilidadService.update(id,entity));
         } catch (Exception e) {
