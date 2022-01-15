@@ -12,7 +12,7 @@ public class Documento {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id_documento")
-    private int idDocumento;
+    private Long idDocumento;
 
     @NotEmpty
 	@Column(name="url", length = 100)

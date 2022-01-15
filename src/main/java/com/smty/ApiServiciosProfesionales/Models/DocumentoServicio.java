@@ -11,7 +11,7 @@ public class DocumentoServicio {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id_documento_servicio")
-    private int idDocumentoServicio;
+    private Long idDocumentoServicio;
 	
 	@ManyToOne
 	@JoinColumn(name="id_servicios")
