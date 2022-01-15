@@ -22,6 +22,7 @@ import com.smty.ApiServiciosProfesionales.Services.DocumentoServicioService;
 public class DocumentoServicioController {
 	@Autowired
 	private DocumentoServicioService documentoServicioService;
+	
 	//LISTAR TODO
     @GetMapping
     public ResponseEntity<List<DocumentoServicio>> getAll()
