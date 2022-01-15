@@ -14,7 +14,7 @@ public class Imagen {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id_imagen")
-    private int idImagen;
+    private Long idImagen;
 
     @NotEmpty
 	@Column(name="url", length = 100)

@@ -11,7 +11,7 @@ public class ImagenServicio {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id_imagen_servicio")
-	private int idImagenServicio;
+	private Long idImagenServicio;
 	
 	@ManyToOne
 	@JoinColumn(name="id_servicio")
