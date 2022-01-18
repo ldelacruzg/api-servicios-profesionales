@@ -68,7 +68,7 @@ public class OcupacionService {
         {
             Optional<Ocupacion> entityOptional = ocupasionRepository.findById(id);
             Ocupacion ocupacion = entityOptional.get();
-            ocupacion = ocupasionRepository.save(ocupacion);
+            ocupacion = ocupasionRepository.save(entity);
             return  ocupacion;
         }
         catch (Exception e)
