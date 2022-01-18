@@ -68,7 +68,7 @@ public class PersonaService {
         {
             Optional<Persona> entityOptional = personaRepository.findById(id);
             Persona persona = entityOptional.get();
-            persona = personaRepository.save(persona);
+            persona = personaRepository.save(entity);
             return  persona;
         }
         catch (Exception e)

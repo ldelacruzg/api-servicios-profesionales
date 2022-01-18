@@ -68,7 +68,7 @@ public class ServicioPlanService {
         {
             Optional<ServicioPlan> entityOptional = servicioPlanRepository.findById(id);
             ServicioPlan servicioPlan = entityOptional.get();
-            servicioPlan = servicioPlanRepository.save(servicioPlan);
+            servicioPlan = servicioPlanRepository.save(entity);
             return  servicioPlan;
         }
         catch (Exception e)

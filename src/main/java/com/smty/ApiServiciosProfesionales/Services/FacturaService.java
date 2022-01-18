@@ -68,7 +68,7 @@ public class FacturaService {
         {
             Optional<Factura> entityOptional = facturaRepository.findById(id);
             Factura factura = entityOptional.get();
-            factura = facturaRepository.save(factura);
+            factura = facturaRepository.save(entity);
             return  factura;
         }
         catch (Exception e)

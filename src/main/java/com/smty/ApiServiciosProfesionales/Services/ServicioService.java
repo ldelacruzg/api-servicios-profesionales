@@ -68,7 +68,7 @@ public class ServicioService {
         {
             Optional<Servicio> entityOptional = servicioRepository.findById(id);
             Servicio servicio = entityOptional.get();
-            servicio = servicioRepository.save(servicio);
+            servicio = servicioRepository.save(entity);
             return  servicio;
         }
         catch (Exception e)

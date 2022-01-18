@@ -68,7 +68,7 @@ public class PaisService {
         {
             Optional<Pais> entityOptional = paisRepository.findById(id);
             Pais pais = entityOptional.get();
-            pais = paisRepository.save(pais);
+            pais = paisRepository.save(entity);
             return  pais;
         }
         catch (Exception e)

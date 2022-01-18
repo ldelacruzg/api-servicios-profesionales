@@ -68,7 +68,7 @@ public class PersonaIdiomaService {
         {
             Optional<PersonaIdioma> entityOptional = personaIdiomaService.findById(id);
             PersonaIdioma personaIdioma = entityOptional.get();
-            personaIdioma = personaIdiomaService.save(personaIdioma);
+            personaIdioma = personaIdiomaService.save(entity);
             return  personaIdioma;
         }
         catch (Exception e)

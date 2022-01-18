@@ -68,7 +68,7 @@ public class IdiomaService {
         {
             Optional<Idioma> entityOptional = idiomaRepository.findById(id);
             Idioma idioma = entityOptional.get();
-            idioma = idiomaRepository.save(idioma);
+            idioma = idiomaRepository.save(entity);
             return  idioma;
         }
         catch (Exception e)

@@ -68,7 +68,7 @@ public class PreguntaService {
         {
             Optional<Pregunta> entityOptional = preguntaRepository.findById(id);
             Pregunta pregunta = entityOptional.get();
-            pregunta = preguntaRepository.save(pregunta);
+            pregunta = preguntaRepository.save(entity);
             return  pregunta;
         }
         catch (Exception e)
