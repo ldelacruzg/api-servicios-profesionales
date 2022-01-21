@@ -22,6 +22,6 @@ public class Cliente {
 	//Se encarga de generar una relación de muchos a uno
 	@JoinColumn(name="id_persona")
 	//Es para hacer referencia a la columna que es clave externa en la tabla y que se encarga de definir la relación.
-	private Idioma idioma;
+	private Persona persona;
 
 }
