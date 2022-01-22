@@ -10,6 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("api/ProfesionalesHabilidadades")
+@CrossOrigin("*")
 public class ProfesionalHabilidadController {
     @Autowired
     private ProfesionalHabilidadService profesionalHabilidadService;

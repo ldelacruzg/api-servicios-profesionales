@@ -12,6 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("api/profesionales")
+@CrossOrigin("*")
 public class ProfesionalController {
     @Autowired
     private ProfesionalService profesionalService;

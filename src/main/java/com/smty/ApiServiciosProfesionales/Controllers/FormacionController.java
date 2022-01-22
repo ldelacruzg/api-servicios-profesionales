@@ -10,6 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("api/formaciones")
+@CrossOrigin("*")
 public class FormacionController {
     @Autowired
     private FormacionService formacionService;

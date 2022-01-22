@@ -13,6 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("api/habilidades")
+@CrossOrigin("*")
 public class HabilidadController {
     @Autowired
     private HabilidadService habilidadService;
