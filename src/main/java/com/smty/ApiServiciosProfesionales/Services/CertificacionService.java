@@ -2,6 +2,7 @@ package com.smty.ApiServiciosProfesionales.Services;
 
 import com.smty.ApiServiciosProfesionales.Models.Certificacion;
 import com.smty.ApiServiciosProfesionales.Repositories.CertificacionRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -10,6 +11,7 @@ import java.util.Optional;
 
 @Service
 public class CertificacionService {
+    @Autowired
     private CertificacionRepository certificacionRepository;
 
     //Este metodo permite lisatr todos los registro de la entidad.
