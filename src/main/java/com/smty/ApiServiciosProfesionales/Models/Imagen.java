@@ -22,8 +22,17 @@ public class Imagen {
     private Long idImagen;
 
     @NotEmpty
- // Se usa en clases de colección
+    // Se usa en clases de colección
 	@Column(name="url_img", length = 100)
     private String urlImg;
+    
+    //La anotación @ManyToOne significa que hay una relación de muchos a uno
+  	@ManyToOne
+  	
+  	//La anotación @JoinColumn sirve para especificar cuál será la clave
+  	//foránea. Así mismo se crea una instancia de la clase SubCategoria para
+  	//poder hacer referencia que en aquella clase está la clave foránea
+  	@JoinColumn(name="id_servicio")
+  	private Servicio servicio;
 	
 }

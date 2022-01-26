@@ -31,12 +31,10 @@ public class Factura {
 	
 	//La anotación @ManyToOne significa que hay una relación de muchos a uno
 	@ManyToOne
-	
-	//La anotación @JoinColumn sirve para especificar cuál será la clave
-	//foránea. Así mismo se crea una instancia de la clase Cliente para
-	//poder hacer referencia que en aquella clase está la clave foránea
-	@JoinColumn(name="id_cliente")
-	private Cliente Cliente;
+	//Se encarga de generar una relación de muchos a uno
+	@JoinColumn(name="id_usuario")
+	//Es para hacer referencia a la columna que es clave externa en la tabla y que se encarga de definir la relación.
+	private Usuario usuario;
 	
 	@ManyToOne
 	@JoinColumn(name="id_servicio")

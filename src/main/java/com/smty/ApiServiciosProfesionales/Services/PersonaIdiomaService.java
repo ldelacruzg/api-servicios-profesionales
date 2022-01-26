@@ -8,7 +8,7 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.smty.ApiServiciosProfesionales.Models.PersonaIdioma;
+import com.smty.ApiServiciosProfesionales.Models.UsuarioIdioma;
 import com.smty.ApiServiciosProfesionales.Repositories.PersonaIdiomaRepository;
 
 @Service
@@ -18,11 +18,11 @@ public class PersonaIdiomaService {
 	
 	//Este metodo permite listar todos los registro de la entidad.
 	@Transactional
-	public List<PersonaIdioma> findAll() throws Exception
+	public List<UsuarioIdioma> findAll() throws Exception
 	{
 		try
 		{
-			return (List<PersonaIdioma>) personaIdiomaService.findAll();
+			return (List<UsuarioIdioma>) personaIdiomaService.findAll();
 		}
 		catch(Exception ex)
 		{
@@ -32,11 +32,11 @@ public class PersonaIdiomaService {
 	
 	//Este metodo permite: Actualizar una PersonaIdioma mediante su ID.
 	@Transactional
-	public PersonaIdioma findById(Long id) throws Exception
+	public UsuarioIdioma findById(Long id) throws Exception
 	{
 	    try
 	    {
-	        Optional<PersonaIdioma> entityOptional = personaIdiomaService.findById(id);
+	        Optional<UsuarioIdioma> entityOptional = personaIdiomaService.findById(id);
 	        return entityOptional.get();
 	    }
 	    catch (Exception e)
@@ -47,7 +47,7 @@ public class PersonaIdiomaService {
 
     //Este metodo permite: guardar.
 	@Transactional
-	public PersonaIdioma save(PersonaIdioma entity) throws Exception
+	public UsuarioIdioma save(UsuarioIdioma entity) throws Exception
 	{
 	    try
 	    {
@@ -62,14 +62,14 @@ public class PersonaIdiomaService {
 
     //Este metodo permite: Actualizar mediante ID
     @Transactional
-    public PersonaIdioma update(Long id, PersonaIdioma entity) throws Exception
+    public UsuarioIdioma update(Long id, UsuarioIdioma entity) throws Exception
     {
         try
         {
-            Optional<PersonaIdioma> entityOptional = personaIdiomaService.findById(id);
-            PersonaIdioma personaIdioma = entityOptional.get();
-            personaIdioma = personaIdiomaService.save(entity);
-            return  personaIdioma;
+            Optional<UsuarioIdioma> entityOptional = personaIdiomaService.findById(id);
+            UsuarioIdioma usuarioIdioma = entityOptional.get();
+            usuarioIdioma = personaIdiomaService.save(entity);
+            return  usuarioIdioma;
         }
         catch (Exception e)
         {

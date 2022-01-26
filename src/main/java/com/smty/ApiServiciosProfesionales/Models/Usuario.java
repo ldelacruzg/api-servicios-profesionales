@@ -3,6 +3,7 @@ package com.smty.ApiServiciosProfesionales.Models;
 import lombok.Data;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 
 //La anotación @Data proporciona los métodos de obtención y configuración de
@@ -58,7 +59,7 @@ public class Usuario {
 	@Column(name="dni", length = 15)
 	private String dni;
 
-	@NotEmpty
+	@Email
 	@Column(name="email", length = 50)
 	private String email;
 	

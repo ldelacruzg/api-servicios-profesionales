@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.smty.ApiServiciosProfesionales.Models.PersonaIdioma;
+import com.smty.ApiServiciosProfesionales.Models.UsuarioIdioma;
 import com.smty.ApiServiciosProfesionales.Services.PersonaIdiomaService;
 
 @RestController
@@ -27,7 +27,7 @@ public class PersonaIdiomaController {
 	
 	//LISTAR TODO
     @GetMapping
-    public ResponseEntity<List<PersonaIdioma>> getAll()
+    public ResponseEntity<List<UsuarioIdioma>> getAll()
     {
         try
         {
@@ -41,7 +41,7 @@ public class PersonaIdiomaController {
 
     //BUSCAR POR ID
     @RequestMapping(value = "{id}")
-    public ResponseEntity<PersonaIdioma> finfById(@PathVariable("id")Long id)
+    public ResponseEntity<UsuarioIdioma> finfById(@PathVariable("id")Long id)
     {
         try
         {
@@ -55,7 +55,7 @@ public class PersonaIdiomaController {
 
     //GUARDAR
     @PostMapping
-    public ResponseEntity<PersonaIdioma> create (@RequestBody PersonaIdioma entity)
+    public ResponseEntity<UsuarioIdioma> create (@RequestBody UsuarioIdioma entity)
     {
         try
         {
@@ -83,7 +83,7 @@ public class PersonaIdiomaController {
 
     //ACTUALIZAR
     @PutMapping(value =  "{id}")
-    private ResponseEntity<PersonaIdioma>update(@PathVariable Long id, @RequestBody PersonaIdioma entity)
+    private ResponseEntity<UsuarioIdioma>update(@PathVariable Long id, @RequestBody UsuarioIdioma entity)
     {
         try
         {

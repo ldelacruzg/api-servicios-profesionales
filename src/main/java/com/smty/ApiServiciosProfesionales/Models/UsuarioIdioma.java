@@ -15,7 +15,7 @@ import javax.persistence.*;
 //persistirá la entidad
 @Table(name = "personas_idiomas")
 
-public class PersonaIdioma {
+public class UsuarioIdioma {
 	//La anotación @Id marca el identificador de la tabla, es decir, su clave primaria
 	@Id
 	
@@ -37,8 +37,8 @@ public class PersonaIdioma {
 	private Idioma Idioma;
 	
 	@ManyToOne
-	@JoinColumn(name="id_persona")
-	private Usuario Persona;
+	@JoinColumn(name="id_usuario")
+	private Usuario usuario;
 	
 	@Column(name="nivel", length = 30)
     private String nivel;	
