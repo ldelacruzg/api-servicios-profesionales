@@ -15,23 +15,23 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.smty.ApiServiciosProfesionales.Models.Cliente;
-import com.smty.ApiServiciosProfesionales.Services.ClienteService;
+import com.smty.ApiServiciosProfesionales.Models.UsuarioIdioma;
+import com.smty.ApiServiciosProfesionales.Services.UsuarioIdiomaService;
 
 @RestController
-@RequestMapping("api/clientes")
+@RequestMapping("api/personasidiomas")
 @CrossOrigin("*")
-public class ClienteController {
+public class UsuarioIdiomaController {
 	@Autowired
-	private ClienteService clienteService;
+	private UsuarioIdiomaService usuarioIdiomaService;
 	
 	//LISTAR TODO
     @GetMapping
-    public ResponseEntity<List<Cliente>> getAll()
+    public ResponseEntity<List<UsuarioIdioma>> getAll()
     {
         try
         {
-            return ResponseEntity.ok().body(clienteService.findAll());
+            return ResponseEntity.ok().body(usuarioIdiomaService.findAll());
         }
         catch (Exception e)
         {
@@ -41,11 +41,11 @@ public class ClienteController {
 
     //BUSCAR POR ID
     @RequestMapping(value = "{id}")
-    public ResponseEntity<Cliente> finfById(@PathVariable("id")Long id)
+    public ResponseEntity<UsuarioIdioma> finfById(@PathVariable("id")Long id)
     {
         try
         {
-            return ResponseEntity.ok().body(clienteService.findById(id));
+            return ResponseEntity.ok().body(usuarioIdiomaService.findById(id));
         }
         catch (Exception e)
         {
@@ -55,11 +55,11 @@ public class ClienteController {
 
     //GUARDAR
     @PostMapping
-    public ResponseEntity<Cliente> create (@RequestBody Cliente entity)
+    public ResponseEntity<UsuarioIdioma> create (@RequestBody UsuarioIdioma entity)
     {
         try
         {
-            return ResponseEntity.ok().body(clienteService.save(entity));
+            return ResponseEntity.ok().body(usuarioIdiomaService.save(entity));
         }
         catch (Exception e)
         {
@@ -73,7 +73,7 @@ public class ClienteController {
     {
         try
         {
-            return ResponseEntity.status(HttpStatus.NO_CONTENT).body(clienteService.delete(id));
+            return ResponseEntity.status(HttpStatus.NO_CONTENT).body(usuarioIdiomaService.delete(id));
         }
         catch (Exception e)
         {
@@ -83,11 +83,11 @@ public class ClienteController {
 
     //ACTUALIZAR
     @PutMapping(value =  "{id}")
-    private ResponseEntity<Cliente>update(@PathVariable Long id, @RequestBody Cliente entity)
+    private ResponseEntity<UsuarioIdioma>update(@PathVariable Long id, @RequestBody UsuarioIdioma entity)
     {
         try
         {
-            return ResponseEntity.ok().body(clienteService.update(id,entity));
+            return ResponseEntity.ok().body(usuarioIdiomaService.update(id,entity));
         }
         catch (Exception e)
         {

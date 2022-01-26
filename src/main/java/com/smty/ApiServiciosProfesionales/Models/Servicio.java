@@ -67,4 +67,6 @@ public class Servicio {
 	
 	@Column(name="fecha_plublicacion")
     private Date fechaPublicacion;
+	
+	
 }

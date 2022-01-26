@@ -23,8 +23,8 @@ public class Profesional {
 
 
 	@ManyToOne //Relacion de uno a varios
-	@JoinColumn(name = "id_persona") //nombre de la clave foránea.
-	private Usuario persona; //Instancia de la clase con la que se va a relacionar.
+	@JoinColumn(name = "id_usuario") //nombre de la clave foránea.
+	private Usuario usuario; //Instancia de la clase con la que se va a relacionar.
 
 	@ManyToOne
 	@JoinColumn(name = "id_ocupacion")

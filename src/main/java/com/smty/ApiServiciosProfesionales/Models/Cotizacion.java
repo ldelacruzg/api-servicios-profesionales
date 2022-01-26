@@ -25,9 +25,9 @@ public class Cotizacion {
 	
 	@ManyToOne
 	//Se encarga de generar una relación de muchos a uno
-	@JoinColumn(name="id_cliente")
+	@JoinColumn(name="id_usuario")
 	//Es para hacer referencia a la columna que es clave externa en la tabla y que se encarga de definir la relación.
-	private Cliente cliente;
+	private Usuario usuario;
 	
 	@ManyToOne
 	//Se encarga de generar una relación de muchos a uno
