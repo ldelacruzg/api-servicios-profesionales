@@ -22,7 +22,7 @@ public class ServicioPlanService {
 	{
 		try
 		{
-			return (List<ServicioPlan>) servicioPlanRepository.findAll();
+			return servicioPlanRepository.findAll();
 		}
 		catch(Exception ex)
 		{

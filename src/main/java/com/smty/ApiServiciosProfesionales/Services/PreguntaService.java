@@ -22,7 +22,7 @@ public class PreguntaService {
 	{
 		try
 		{
-			return (List<Pregunta>) preguntaRepository.findAll();
+			return preguntaRepository.findAll();
 		}
 		catch(Exception ex)
 		{

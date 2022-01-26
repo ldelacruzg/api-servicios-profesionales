@@ -22,7 +22,7 @@ public class OcupacionService {
 	{
 		try
 		{
-			return (List<Ocupacion>) ocupasionRepository.findAll();
+			return ocupasionRepository.findAll();
 		}
 		catch(Exception ex)
 		{

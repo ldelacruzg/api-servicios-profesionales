@@ -22,7 +22,7 @@ public class PersonaIdiomaService {
 	{
 		try
 		{
-			return (List<PersonaIdioma>) personaIdiomaService.findAll();
+			return personaIdiomaService.findAll();
 		}
 		catch(Exception ex)
 		{

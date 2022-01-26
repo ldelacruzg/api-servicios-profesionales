@@ -22,7 +22,7 @@ public class IdiomaService {
 	{
 		try
 		{
-			return (List<Idioma>) idiomaRepository.findAll();
+			return idiomaRepository.findAll();
 		}
 		catch(Exception ex)
 		{

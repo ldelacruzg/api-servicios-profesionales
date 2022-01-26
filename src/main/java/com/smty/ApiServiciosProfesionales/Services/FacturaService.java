@@ -22,7 +22,7 @@ public class FacturaService {
 	{
 		try
 		{
-			return (List<Factura>) facturaRepository.findAll();
+			return facturaRepository.findAll();
 		}
 		catch(Exception ex)
 		{

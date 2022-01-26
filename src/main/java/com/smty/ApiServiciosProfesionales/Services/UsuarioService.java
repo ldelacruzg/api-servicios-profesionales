@@ -22,7 +22,7 @@ public class UsuarioService {
 	{
 		try
 		{
-			return (List<Usuario>) usuarioRepository.findAll();
+			return usuarioRepository.findAll();
 		}
 		catch(Exception ex)
 		{

@@ -22,7 +22,7 @@ public class PaisService {
 	{
 		try
 		{
-			return (List<Pais>) paisRepository.findAll();
+			return paisRepository.findAll();
 		}
 		catch(Exception ex)
 		{

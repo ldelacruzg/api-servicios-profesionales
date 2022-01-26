@@ -17,7 +17,7 @@ public class ProfesionalController {
     @Autowired
     private ProfesionalService profesionalService;
 
-    //LISTAR TODO
+    //TODO LISTAR
     @GetMapping
     public ResponseEntity<List<Profesional>> getAll() {
         try {
@@ -27,7 +27,7 @@ public class ProfesionalController {
         }
     }
 
-    // BUSCAR POR ID
+    //TODO: BUSCAR POR ID
     @RequestMapping(value = "{id}")
     public ResponseEntity<Profesional> finfById(@PathVariable("id")Long id){
         try {
