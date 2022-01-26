@@ -13,7 +13,7 @@ import javax.persistence.*;
 
 //La anotación @Table permite especificar el nombre de la tabla donde se
 //persistirá la entidad
-@Table(name = "personas_idiomas")
+@Table(name = "usuarios_idiomas")
 
 public class UsuarioIdioma {
 	//La anotación @Id marca el identificador de la tabla, es decir, su clave primaria
@@ -24,8 +24,8 @@ public class UsuarioIdioma {
 	
 	//La anotación @Column sirve para darle el nombre a una columna de la tabla,
 	//así mismo se puede configurar el lenght
-	@Column(name="id_persona_idioma")
-    private Long idPersonaIdioma;
+	@Column(name="id_usuario_idioma")
+    private Long idUsuarioIdioma;
 	
 	//La anotación @ManyToOne significa que hay una relación de muchos a uno
 	@ManyToOne
