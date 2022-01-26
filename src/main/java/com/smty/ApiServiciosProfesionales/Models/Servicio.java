@@ -64,6 +64,24 @@ public class Servicio {
 	
 	@Column(name="titulo", length = 100)
     private String titulo;
+
+	@Column(name="imagen_one", length = 255)
+	private String imagenOne;
+
+	@Column(name="imagen_two", length = 255)
+	private String imagenTwo;
+
+	@Column(name="imagen_three", length = 255)
+	private String imagenThree;
+
+	@Column(name="pregunta_one", length = 255)
+	private String preguntaOne;
+
+	@Column(name="pregunta_two", length = 255)
+	private String preguntatwo;
+
+	@Column(name="pregunta_three", length = 255)
+	private String preguntaThree;
 	
 	@Column(name="fecha_plublicacion")
     private Date fechaPublicacion;
