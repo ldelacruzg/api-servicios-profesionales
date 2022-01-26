@@ -33,7 +33,7 @@ public class Usuario {
 	//ser mayor a 0
 	@NotEmpty
 	@Column(name="nombre", length = 100)
-    private String nombres;
+    private String nombre;
 
 	@NotEmpty
 	@Column(name="apellido", length = 100)
