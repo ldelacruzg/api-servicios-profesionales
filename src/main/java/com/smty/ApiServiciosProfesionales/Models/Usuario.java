@@ -18,19 +18,13 @@ import javax.validation.constraints.NotEmpty;
 @Table(name = "usuarios")
 
 public class Usuario {
-	//La anotación @Id marca el identificador de la tabla, es decir, su clave primaria
+
 	@Id
-	
-	//La anotación @GeneratedValue sirve para que el campo sea autoincremental
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-	
-	//La anotación @Column sirve para darle el nombre a una columna de la tabla,
-	//así mismo se puede configurar el lenght
 	@Column(name="id_usuario")
     private Long idUsuario;
 	
-	//La anotación @NotEmpty sirve para especificar que que el valor debe
-	//ser mayor a 0
+
 	@NotEmpty
 	@Column(name="nombre", length = 100)
     private String nombre;
@@ -46,8 +40,8 @@ public class Usuario {
 	@Column(name="direccion")
     private String direccion;
 	
-	@Column(name="url_foto")
-    private String urlFoto;
+	@Column(name="foto_perfil", length=50)
+    private String foto_perfil;
 	
 	@Column(name="descripcion")
     private String descripcion;
@@ -62,17 +56,9 @@ public class Usuario {
 	@Email
 	@Column(name="email", length = 50)
 	private String email;
-	
-	//La anotación @ManyToOne significa que hay una relación de muchos a uno
+
+	//todo: relacion con la entidad pais
 	@ManyToOne
-	
-	//La anotación @JoinColumn sirve para especificar cuál será la clave
-	//foránea. Así mismo se crea una instancia de la clase Pais para
-	//poder hacer referencia que en aquella clase está la clave foránea
 	@JoinColumn(name="id_pais")
 	private Pais pais;
-	
-	@NotEmpty
-	@Column(name="tipo_usuario", length = 15)
-	private Short tipoUsuario;
 }

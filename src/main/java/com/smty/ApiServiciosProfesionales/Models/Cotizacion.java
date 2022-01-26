@@ -8,54 +8,40 @@ import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 
 @Data
-//proporciona los metodos de obtención y configuración de todas las propiedades de la clase 
 @Entity
-//Se define que la clase se puede asignar a una tabla 
 @Table(name = "cotizaciones")
-//Nos permite especificar el nombre de la tabla donde se persistirá la entidad
 public class Cotizacion {
 
 	@Id
-	//Marca el identificador de la clase, es decir, su clave primaria
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-	//Para que el campo sea autoincremental 
 	@Column(name="id_cotizar")
-	// La propiedad column name especifica el nombre de la columna donde va a ser persistido el campo
     private int idCotizar;
-	
-	@ManyToOne
-	//Se encarga de generar una relación de muchos a uno
-	@JoinColumn(name="id_usuario")
-	//Es para hacer referencia a la columna que es clave externa en la tabla y que se encarga de definir la relación.
-	private Usuario usuario;
-	
-	@ManyToOne
-	//Se encarga de generar una relación de muchos a uno
-	@JoinColumn(name="id_profesional")
-	//Es para hacer referencia a la columna que es clave externa en la tabla y que se encarga de definir la relación.
-	private Profesional profesional;
 
 	@NotEmpty
-	//Se encarga de generar una relación de muchos a uno
 	@Column(name="descripcion")
-	//Es para hacer referencia a la columna que es clave externa en la tabla y que se encarga de definir la relación.
     private String descripcion;
 
 	@NotEmpty
-	//Se encarga de generar una relación de muchos a uno
 	@Column(name="precio")
-	//Es para hacer referencia a la columna que es clave externa en la tabla y que se encarga de definir la relación.
     private Double precio;
 
 	@NotEmpty
-	//Se encarga de generar una relación de muchos a uno
-	@Column(name="dia")
-	//Es para hacer referencia a la columna que es clave externa en la tabla y que se encarga de definir la relación.
-    private Short dia;
+	@Column(name="dias_espera")
+    private Short dias_espera;
 	
 	@Column(name="fecha_cotizacion")
     private Date fechaCotizacion;
 	
-	@Column(name="url_doc")
-    private String urlDoc;
+	@Column(name="documento", length = 50)
+    private String documento;
+
+	//todo: relacion con la entidad usuario
+	@ManyToOne
+	@JoinColumn(name="id_usuario")
+	private Usuario usuario;
+
+	//todo: relacion con la entidad profesional
+	@ManyToOne
+	@JoinColumn(name="id_profesional")
+	private Profesional profesional;
 }

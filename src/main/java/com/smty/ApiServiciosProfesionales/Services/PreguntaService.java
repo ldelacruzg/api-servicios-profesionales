@@ -1,7 +1,7 @@
 package com.smty.ApiServiciosProfesionales.Services;
 
-import com.smty.ApiServiciosProfesionales.Models.ProfesionalFormacion;
-import com.smty.ApiServiciosProfesionales.Repositories.ProfesionalFormacionRepository;
+import com.smty.ApiServiciosProfesionales.Models.Pregunta;
+import com.smty.ApiServiciosProfesionales.Repositories.PreguntaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,26 +10,26 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class ProfesionalFromacionService {
+public class PreguntaService {
 
     @Autowired
-    private ProfesionalFormacionRepository profesionalFormacionRepository;
+    private PreguntaRepository preguntaRepository;
 
     //Este metodo permite lisatr todos los registro de la entidad.
     @Transactional
-    public List<ProfesionalFormacion> findAll() throws Exception{
+    public List<Pregunta> findAll() throws Exception{
         try {
-            return profesionalFormacionRepository.findAll();
+            return preguntaRepository.findAll();
         }catch (Exception e){
             throw  new Exception(e.getMessage());
         }
     }
 
-    //Este metodo permite: Buscar un profesionalHabilidad mediante su ID.
+    //Este metodo permite: Buscar un pregunta mediante su ID.
     @Transactional
-    public ProfesionalFormacion findById(Long id) throws Exception{
+    public Pregunta findById(Long id) throws Exception{
         try {
-            Optional<ProfesionalFormacion> entityOptional = profesionalFormacionRepository.findById(id);
+            Optional<Pregunta> entityOptional = preguntaRepository.findById(id);
             return entityOptional.get();
         }catch (Exception e){
             throw  new Exception(e.getMessage());
@@ -38,9 +38,9 @@ public class ProfesionalFromacionService {
 
     //Este metodo permite: guardar.
     @Transactional
-    public ProfesionalFormacion save(ProfesionalFormacion entity) throws Exception{
+    public Pregunta save(Pregunta entity) throws Exception{
         try {
-            entity = profesionalFormacionRepository.save(entity);
+            entity = preguntaRepository.save(entity);
             return entity;
         }catch (Exception e){
             throw  new Exception(e.getMessage());
@@ -49,12 +49,12 @@ public class ProfesionalFromacionService {
 
     //Este metodo permite: Actualizar mediante ID
     @Transactional
-    public ProfesionalFormacion update(Long id, ProfesionalFormacion entity) throws Exception{
+    public Pregunta update(Long id, Pregunta entity) throws Exception{
         try {
-            Optional<ProfesionalFormacion> entityOptional = profesionalFormacionRepository.findById(id);
-            ProfesionalFormacion profesionalFormacion = entityOptional.get();
-            profesionalFormacion = profesionalFormacionRepository.save(entity);
-            return  profesionalFormacion;
+            Optional<Pregunta> entityOptional = preguntaRepository.findById(id);
+            Pregunta pregunta = entityOptional.get();
+            pregunta = preguntaRepository.save(entity);
+            return  pregunta;
         }catch (Exception e){
             throw  new Exception(e.getMessage());
         }
@@ -64,8 +64,8 @@ public class ProfesionalFromacionService {
     @Transactional
     public boolean delete(Long id) throws Exception{
         try {
-            if(profesionalFormacionRepository.existsById(id)){
-                profesionalFormacionRepository.deleteById(id);
+            if(preguntaRepository.existsById(id)){
+                preguntaRepository.deleteById(id);
                 return  true;
             }else {
                 throw  new Exception();
@@ -74,5 +74,4 @@ public class ProfesionalFromacionService {
             throw  new Exception(e.getMessage());
         }
     }
-
 }

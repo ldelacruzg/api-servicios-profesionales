@@ -19,7 +19,7 @@ import com.smty.ApiServiciosProfesionales.Models.ServicioPlan;
 import com.smty.ApiServiciosProfesionales.Services.ServicioPlanService;
 
 @RestController
-@RequestMapping("api/serviciosplanes")
+@RequestMapping("api/servicios_planes")
 @CrossOrigin("*")
 public class ServicioPlanController {
 	@Autowired

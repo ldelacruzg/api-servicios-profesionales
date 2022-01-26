@@ -19,7 +19,7 @@ import com.smty.ApiServiciosProfesionales.Models.Usuario;
 import com.smty.ApiServiciosProfesionales.Services.UsuarioService;
 
 @RestController
-@RequestMapping("api/personas")
+@RequestMapping("api/usuarios")
 @CrossOrigin("*")
 public class UsuarioController {
 	@Autowired

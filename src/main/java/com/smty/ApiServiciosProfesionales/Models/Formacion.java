@@ -5,16 +5,16 @@ import lombok.Data;
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 
-@Data //Crea los constructores así como Getters y Setters.
-@Entity //Denotamos que será una Entity, para que lo interprete SPRING.
-@Table(name ="formaciones") //Denotamos que será una tabla con un nombre especifico, para que lo trabaje JPA
+@Data
+@Entity
+@Table(name ="formaciones")
 public class Formacion {
-    @Id //Define la columna inferior como identificador primary key.
-    @GeneratedValue(strategy = GenerationType.IDENTITY) //Define al identificador como tipo IDENTITY. Autoincrementable.
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name ="id_formacion")
-    private int idFormacion;
+    private Long idFormacion;
 
-    @NotEmpty //Es requerido, no permite valores nulos.
+    @NotEmpty
     @Column(name ="nombre_institucion", length = 80)
     private String nombreInstitucion;
 
@@ -22,7 +22,13 @@ public class Formacion {
     @Column(name ="descripcion", length = 50)
     private String descripcion;
 
-    @ManyToOne //Relacion de uno a varios
-    @JoinColumn(name = "id_pais") //nombre de la clave foránea.
-    private Pais pais; //Instancia de la clase con la que se va a relacionar.
+    //Todo: relacion con la entidad pais
+    @ManyToOne
+    @JoinColumn(name = "id_pais")
+    private Pais pais;
+
+    //Todo: relacion con la entidad pais
+    @ManyToOne
+    @JoinColumn(name = "id_profesional")
+    private Profesional profesional;
 }

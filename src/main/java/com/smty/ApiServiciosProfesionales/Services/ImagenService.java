@@ -1,7 +1,7 @@
 package com.smty.ApiServiciosProfesionales.Services;
 
-import com.smty.ApiServiciosProfesionales.Models.PoliticaUso;
-import com.smty.ApiServiciosProfesionales.Repositories.PoliticaUsoRepository;
+import com.smty.ApiServiciosProfesionales.Models.Imagen;
+import com.smty.ApiServiciosProfesionales.Repositories.ImagenRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,25 +10,26 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class PoliticaUsoService {
+public class ImagenService {
+
     @Autowired
-    private PoliticaUsoRepository politicaUsoRepository;
+    private ImagenRepository imagenRepository;
 
     //Este metodo permite lisatr todos los registro de la entidad.
     @Transactional
-    public List<PoliticaUso> findAll() throws Exception{
+    public List<Imagen> findAll() throws Exception{
         try {
-            return politicaUsoRepository.findAll();
+            return imagenRepository.findAll();
         }catch (Exception e){
             throw  new Exception(e.getMessage());
         }
     }
 
-    //Este metodo permite: Buscar un politicaUso mediante su ID.
+    //Este metodo permite: Buscar un imagen mediante su ID.
     @Transactional
-    public PoliticaUso findById(int id) throws Exception{
+    public Imagen findById(Long id) throws Exception{
         try {
-            Optional<PoliticaUso> entityOptional = politicaUsoRepository.findById(id);
+            Optional<Imagen> entityOptional = imagenRepository.findById(id);
             return entityOptional.get();
         }catch (Exception e){
             throw  new Exception(e.getMessage());
@@ -37,9 +38,9 @@ public class PoliticaUsoService {
 
     //Este metodo permite: guardar.
     @Transactional
-    public PoliticaUso save(PoliticaUso entity) throws Exception{
+    public Imagen save(Imagen entity) throws Exception{
         try {
-            entity = politicaUsoRepository.save(entity);
+            entity = imagenRepository.save(entity);
             return entity;
         }catch (Exception e){
             throw  new Exception(e.getMessage());
@@ -48,12 +49,12 @@ public class PoliticaUsoService {
 
     //Este metodo permite: Actualizar mediante ID
     @Transactional
-    public PoliticaUso update(int id, PoliticaUso entity) throws Exception{
+    public Imagen update(Long id, Imagen entity) throws Exception{
         try {
-            Optional<PoliticaUso> entityOptional = politicaUsoRepository.findById(id);
-            PoliticaUso politicaUso = entityOptional.get();
-            politicaUso = politicaUsoRepository.save(entity);
-            return  politicaUso;
+            Optional<Imagen> entityOptional = imagenRepository.findById(id);
+            Imagen imagen = entityOptional.get();
+            imagen = imagenRepository.save(entity);
+            return  imagen;
         }catch (Exception e){
             throw  new Exception(e.getMessage());
         }
@@ -61,10 +62,10 @@ public class PoliticaUsoService {
 
     //Este metodo permite: Eliminar mediante su ID.
     @Transactional
-    public boolean delete(int id) throws Exception{
+    public boolean delete(Long id) throws Exception{
         try {
-            if(politicaUsoRepository.existsById(id)){
-                politicaUsoRepository.deleteById(id);
+            if(imagenRepository.existsById(id)){
+                imagenRepository.deleteById(id);
                 return  true;
             }else {
                 throw  new Exception();

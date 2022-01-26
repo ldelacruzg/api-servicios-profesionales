@@ -1,100 +1,76 @@
 package com.smty.ApiServiciosProfesionales.Services;
 
-import java.util.List;
-import java.util.Optional;
-
-import javax.transaction.Transactional;
-
+import com.smty.ApiServiciosProfesionales.Models.UsuarioIdioma;
+import com.smty.ApiServiciosProfesionales.Repositories.UsuarioIdiomaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.smty.ApiServiciosProfesionales.Models.UsuarioIdioma;
-import com.smty.ApiServiciosProfesionales.Repositories.UsuarioIdiomaRepository;
+import javax.transaction.Transactional;
+import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UsuarioIdiomaService {
-	@Autowired
-	private UsuarioIdiomaRepository usuarioIdiomaService;
-	
-	//Este metodo permite listar todos los registro de la entidad
-	@Transactional
-	public List<UsuarioIdioma> findAll() throws Exception
-	{
-		try
-		{
-			return (List<UsuarioIdioma>) usuarioIdiomaService.findAll();
-		}
-		catch(Exception ex)
-		{
-			throw new Exception (ex.getMessage());
-		}
-	}
-	
-	//Este metodo permite: Actualizar una PersonaIdioma mediante su ID.
-	@Transactional
-	public UsuarioIdioma findById(Long id) throws Exception
-	{
-	    try
-	    {
-	        Optional<UsuarioIdioma> entityOptional = usuarioIdiomaService.findById(id);
-	        return entityOptional.get();
-	    }
-	    catch (Exception e)
-	    {
-	        throw  new Exception(e.getMessage());
-	    }
-	}
+
+    @Autowired
+    private UsuarioIdiomaRepository usuarioIdiomaRepository;
+
+    //Este metodo permite lisatr todos los registro de la entidad.
+    @Transactional
+    public List<UsuarioIdioma> findAll() throws Exception{
+        try {
+            return usuarioIdiomaRepository.findAll();
+        }catch (Exception e){
+            throw  new Exception(e.getMessage());
+        }
+    }
+
+    //Este metodo permite: Buscar un usuarioIdioma mediante su ID.
+    @Transactional
+    public UsuarioIdioma findById(Long id) throws Exception{
+        try {
+            Optional<UsuarioIdioma> entityOptional = usuarioIdiomaRepository.findById(id);
+            return entityOptional.get();
+        }catch (Exception e){
+            throw  new Exception(e.getMessage());
+        }
+    }
 
     //Este metodo permite: guardar.
-	@Transactional
-	public UsuarioIdioma save(UsuarioIdioma entity) throws Exception
-	{
-	    try
-	    {
-	        entity = usuarioIdiomaService.save(entity);
-	        return entity;
-	    }
-	    catch (Exception e)
-	    {
-	        throw  new Exception(e.getMessage());
-	    }
-	}
+    @Transactional
+    public UsuarioIdioma save(UsuarioIdioma entity) throws Exception{
+        try {
+            entity = usuarioIdiomaRepository.save(entity);
+            return entity;
+        }catch (Exception e){
+            throw  new Exception(e.getMessage());
+        }
+    }
 
     //Este metodo permite: Actualizar mediante ID
     @Transactional
-    public UsuarioIdioma update(Long id, UsuarioIdioma entity) throws Exception
-    {
-        try
-        {
-            Optional<UsuarioIdioma> entityOptional = usuarioIdiomaService.findById(id);
+    public UsuarioIdioma update(Long id, UsuarioIdioma entity) throws Exception{
+        try {
+            Optional<UsuarioIdioma> entityOptional = usuarioIdiomaRepository.findById(id);
             UsuarioIdioma usuarioIdioma = entityOptional.get();
-            usuarioIdioma = usuarioIdiomaService.save(entity);
+            usuarioIdioma = usuarioIdiomaRepository.save(entity);
             return  usuarioIdioma;
-        }
-        catch (Exception e)
-        {
+        }catch (Exception e){
             throw  new Exception(e.getMessage());
         }
     }
 
     //Este metodo permite: Eliminar mediante su ID.
     @Transactional
-    public boolean delete(Long id) throws Exception
-    {
-        try
-        {
-            if(usuarioIdiomaService.existsById(id))
-            {
-            	usuarioIdiomaService.deleteById(id);
+    public boolean delete(Long id) throws Exception{
+        try {
+            if(usuarioIdiomaRepository.existsById(id)){
+                usuarioIdiomaRepository.deleteById(id);
                 return  true;
-            }
-            else
-            {
+            }else {
                 throw  new Exception();
             }
-        }
-        catch (Exception e)
-        {
+        }catch (Exception e){
             throw  new Exception(e.getMessage());
         }
     }

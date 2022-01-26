@@ -6,12 +6,12 @@ import java.util.Date;
 
 import javax.persistence.*;
 
-@Data //Crea los constructores así como Getters y Setters.
-@Entity //Denotamos que será una Entity, para que lo interprete SPRING.
-@Table(name = "profesionales") //Denotamos que será una tabla con un nombre especifico, para que lo trabaje JPA-
+@Data
+@Entity
+@Table(name = "profesionales")
 public class Profesional {
-	@Id //Define la columna inferior como identificador primary key.
-	@GeneratedValue(strategy = GenerationType.IDENTITY) //Define al identificador como tipo IDENTITY. Autoincrementable.
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name ="id_profesional")
 	private Long idProfesional;
 
@@ -21,15 +21,16 @@ public class Profesional {
 	@Column(name ="url_linkedin", length = 100)
 	private String urlLinkedin;
 
+	@Column(name="fecha_registro")
+	private Date fechaRegistro;
 
-	@ManyToOne //Relacion de uno a varios
-	@JoinColumn(name = "id_usuario") //nombre de la clave foránea.
-	private Usuario usuario; //Instancia de la clase con la que se va a relacionar.
+	//todo: relacion con la entidad usuario
+	@ManyToOne
+	@JoinColumn(name = "id_usuario")
+	private Usuario usuario;
 
+	//todo:relacion con la entidad ocupacion
 	@ManyToOne
 	@JoinColumn(name = "id_ocupacion")
 	private Ocupacion ocupacion;
-	
-	@Column(name="fecha_registro")
-    private Date fechaRegistro;
 }
