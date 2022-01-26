@@ -71,4 +71,8 @@ public class Usuario {
 	//poder hacer referencia que en aquella clase está la clave foránea
 	@JoinColumn(name="id_pais")
 	private Pais pais;
+	
+	@NotEmpty
+	@Column(name="tipo_usuario", length = 15)
+	private Short tipoUsuario;
 }
