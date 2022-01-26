@@ -16,7 +16,7 @@ public class UsuarioIdiomaService {
 	@Autowired
 	private UsuarioIdiomaRepository usuarioIdiomaService;
 	
-	//Este metodo permite listar todos los registro de la entidad.
+	//Este metodo permite listar todos los registro de la entidad
 	@Transactional
 	public List<UsuarioIdioma> findAll() throws Exception
 	{
