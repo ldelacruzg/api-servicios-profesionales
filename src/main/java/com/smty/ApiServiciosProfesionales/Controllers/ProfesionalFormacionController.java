@@ -10,7 +10,7 @@ import java.util.List;
 
 
 @RestController
-@RequestMapping("api/ProfesionalesFormaciones")
+@RequestMapping("api/profesionales_formaciones")
 @CrossOrigin("*")
 public class ProfesionalFormacionController {
     @Autowired

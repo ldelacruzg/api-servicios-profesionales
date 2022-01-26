@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 @RestController
-@RequestMapping("api/politicasdeuso")
+@RequestMapping("api/politicas_uso")
 @CrossOrigin("*")
 public class PoliticaUsoController {
     @Autowired

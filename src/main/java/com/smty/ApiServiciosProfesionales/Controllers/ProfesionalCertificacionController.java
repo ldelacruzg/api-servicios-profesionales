@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/profesionalesCertificaciones")
+@RequestMapping("api/profesionales_certificaciones")
 @CrossOrigin("*")
 public class ProfesionalCertificacionController {
     @Autowired
