@@ -8,21 +8,21 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.smty.ApiServiciosProfesionales.Models.PersonaIdioma;
-import com.smty.ApiServiciosProfesionales.Repositories.PersonaIdiomaRepository;
+import com.smty.ApiServiciosProfesionales.Models.UsuarioIdioma;
+import com.smty.ApiServiciosProfesionales.Repositories.UsuarioIdiomaRepository;
 
 @Service
-public class PersonaIdiomaService {
+public class UsuarioIdiomaService {
 	@Autowired
-	private PersonaIdiomaRepository personaIdiomaService;
+	private UsuarioIdiomaRepository usuarioIdiomaService;
 	
 	//Este metodo permite listar todos los registro de la entidad.
 	@Transactional
-	public List<PersonaIdioma> findAll() throws Exception
+	public List<UsuarioIdioma> findAll() throws Exception
 	{
 		try
 		{
-			return (List<PersonaIdioma>) personaIdiomaService.findAll();
+			return (List<UsuarioIdioma>) usuarioIdiomaService.findAll();
 		}
 		catch(Exception ex)
 		{
@@ -32,11 +32,11 @@ public class PersonaIdiomaService {
 	
 	//Este metodo permite: Actualizar una PersonaIdioma mediante su ID.
 	@Transactional
-	public PersonaIdioma findById(Long id) throws Exception
+	public UsuarioIdioma findById(Long id) throws Exception
 	{
 	    try
 	    {
-	        Optional<PersonaIdioma> entityOptional = personaIdiomaService.findById(id);
+	        Optional<UsuarioIdioma> entityOptional = usuarioIdiomaService.findById(id);
 	        return entityOptional.get();
 	    }
 	    catch (Exception e)
@@ -47,11 +47,11 @@ public class PersonaIdiomaService {
 
     //Este metodo permite: guardar.
 	@Transactional
-	public PersonaIdioma save(PersonaIdioma entity) throws Exception
+	public UsuarioIdioma save(UsuarioIdioma entity) throws Exception
 	{
 	    try
 	    {
-	        entity = personaIdiomaService.save(entity);
+	        entity = usuarioIdiomaService.save(entity);
 	        return entity;
 	    }
 	    catch (Exception e)
@@ -62,14 +62,14 @@ public class PersonaIdiomaService {
 
     //Este metodo permite: Actualizar mediante ID
     @Transactional
-    public PersonaIdioma update(Long id, PersonaIdioma entity) throws Exception
+    public UsuarioIdioma update(Long id, UsuarioIdioma entity) throws Exception
     {
         try
         {
-            Optional<PersonaIdioma> entityOptional = personaIdiomaService.findById(id);
-            PersonaIdioma personaIdioma = entityOptional.get();
-            personaIdioma = personaIdiomaService.save(entity);
-            return  personaIdioma;
+            Optional<UsuarioIdioma> entityOptional = usuarioIdiomaService.findById(id);
+            UsuarioIdioma usuarioIdioma = entityOptional.get();
+            usuarioIdioma = usuarioIdiomaService.save(entity);
+            return  usuarioIdioma;
         }
         catch (Exception e)
         {
@@ -83,9 +83,9 @@ public class PersonaIdiomaService {
     {
         try
         {
-            if(personaIdiomaService.existsById(id))
+            if(usuarioIdiomaService.existsById(id))
             {
-            	personaIdiomaService.deleteById(id);
+            	usuarioIdiomaService.deleteById(id);
                 return  true;
             }
             else

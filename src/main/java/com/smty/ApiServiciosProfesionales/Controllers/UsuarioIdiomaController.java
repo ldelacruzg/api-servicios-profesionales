@@ -19,7 +19,7 @@ import com.smty.ApiServiciosProfesionales.Models.UsuarioIdioma;
 import com.smty.ApiServiciosProfesionales.Services.UsuarioIdiomaService;
 
 @RestController
-@RequestMapping("api/personasidiomas")
+@RequestMapping("api/usuariosidiomas")
 @CrossOrigin("*")
 public class UsuarioIdiomaController {
 	@Autowired
