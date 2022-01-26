@@ -32,7 +32,7 @@ public class PreguntaService {
 	
 	//Este metodo permite: Actualizar una pregunta mediante su ID.
 	@Transactional
-	public Pregunta findById(int id) throws Exception
+	public Pregunta findById(Long id) throws Exception
 	{
 	    try
 	    {
@@ -62,7 +62,7 @@ public class PreguntaService {
 
     //Este metodo permite: Actualizar mediante ID
     @Transactional
-    public Pregunta update(int id, Pregunta entity) throws Exception
+    public Pregunta update(Long id, Pregunta entity) throws Exception
     {
         try
         {
@@ -79,7 +79,7 @@ public class PreguntaService {
 
     //Este metodo permite: Eliminar mediante su ID
     @Transactional
-    public boolean delete(int id) throws Exception
+    public boolean delete(Long id) throws Exception
     {
         try
         {

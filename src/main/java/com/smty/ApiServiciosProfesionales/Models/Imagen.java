@@ -23,7 +23,7 @@ public class Imagen {
 
     @NotEmpty
  // Se usa en clases de colección
-	@Column(name="url", length = 100)
-    private String url;
+	@Column(name="url_img", length = 100)
+    private String urlImg;
 	
 }

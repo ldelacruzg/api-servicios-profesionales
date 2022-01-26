@@ -2,6 +2,8 @@ package com.smty.ApiServiciosProfesionales.Models;
 
 import lombok.Data;
 
+import java.util.Date;
+
 import javax.persistence.*;
 
 @Data //Crea los constructores así como Getters y Setters.
@@ -13,19 +15,21 @@ public class Profesional {
 	@Column(name ="id_profesional")
 	private Long idProfesional;
 
-	@Column(name ="url_sitio_web", length = 80)
+	@Column(name ="url_sitio_web", length = 100)
 	private String urlSitioWeb;
 
-	@Column(name ="url_linkedin", length = 80)
+	@Column(name ="url_linkedin", length = 100)
 	private String urlLinkedin;
 
 
 	@ManyToOne //Relacion de uno a varios
 	@JoinColumn(name = "id_persona") //nombre de la clave foránea.
-	private Persona persona; //Instancia de la clase con la que se va a relacionar.
+	private Usuario persona; //Instancia de la clase con la que se va a relacionar.
 
 	@ManyToOne
 	@JoinColumn(name = "id_ocupacion")
 	private Ocupacion ocupacion;
-
+	
+	@Column(name="fecha_registro")
+    private Date fechaRegistro;
 }

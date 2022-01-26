@@ -38,7 +38,7 @@ public class PersonaIdioma {
 	
 	@ManyToOne
 	@JoinColumn(name="id_persona")
-	private Persona Persona;
+	private Usuario Persona;
 	
 	@Column(name="nivel", length = 30)
     private String nivel;	

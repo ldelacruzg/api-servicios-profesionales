@@ -41,7 +41,7 @@ public class PreguntaController {
 
     //BUSCAR POR ID
     @RequestMapping(value = "{id}")
-    public ResponseEntity<Pregunta> finfById(@PathVariable("id")int id)
+    public ResponseEntity<Pregunta> finfById(@PathVariable("id")Long id)
     {
         try
         {
@@ -69,7 +69,7 @@ public class PreguntaController {
 
     //ELIMINAR
     @DeleteMapping(value =  "{id}")
-    public ResponseEntity<Boolean> delete (@PathVariable int id)
+    public ResponseEntity<Boolean> delete (@PathVariable Long id)
     {
         try
         {
@@ -83,7 +83,7 @@ public class PreguntaController {
 
     //ACTUALIZAR
     @PutMapping(value =  "{id}")
-    private ResponseEntity<Pregunta>update(@PathVariable int id, @RequestBody Pregunta entity)
+    private ResponseEntity<Pregunta>update(@PathVariable Long id, @RequestBody Pregunta entity)
     {
         try
         {

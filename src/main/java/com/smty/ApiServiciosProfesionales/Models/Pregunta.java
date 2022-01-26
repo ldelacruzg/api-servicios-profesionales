@@ -26,7 +26,7 @@ public class Pregunta {
 	//La anotación @Column sirve para darle el nombre a una columna de la tabla,
 	//así mismo se puede configurar el lenght
 	@Column(name="id_pregunta")
-    private int idPregunta;
+    private Long idPregunta;
 	
 	//La anotación @NotEmpty sirve para especificar que que el valor debe
 	//ser mayor a 0
@@ -37,4 +37,8 @@ public class Pregunta {
     @NotEmpty
 	@Column(name="respuesta")
     private String respuesta;
+    
+    @ManyToOne
+	@JoinColumn(name="id_servicio")
+    private Servicio servicio;
 }

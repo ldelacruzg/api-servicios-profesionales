@@ -2,6 +2,8 @@ package com.smty.ApiServiciosProfesionales.Models;
 
 import lombok.Data;
 
+import java.util.Date;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 
@@ -51,5 +53,9 @@ public class Cotizacion {
 	//Es para hacer referencia a la columna que es clave externa en la tabla y que se encarga de definir la relación.
     private Short dia;
 	
+	@Column(name="fecha_cotizacion")
+    private Date fechaCotizacion;
 	
+	@Column(name="url_doc")
+    private String urlDoc;
 }

@@ -4,6 +4,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
+import java.util.Date;
 
 //La anotación @Data proporciona los métodos de obtención y configuración de
 //de las propiedades de la clase
@@ -57,4 +58,13 @@ public class Servicio {
 
 	@Column(name="estado")
     private Boolean estado;
+	
+	@Column(name="url_doc")
+    private String urlDoc;
+	
+	@Column(name="titulo", length = 100)
+    private String titulo;
+	
+	@Column(name="fecha_plublicacion")
+    private Date fechaPublicacion;
 }
