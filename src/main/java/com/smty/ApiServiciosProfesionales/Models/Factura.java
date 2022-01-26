@@ -36,7 +36,7 @@ public class Factura {
 	//Es para hacer referencia a la columna que es clave externa en la tabla y que se encarga de definir la relación.
 	private Usuario usuario;
 	
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name="id_servicio")
 	private Servicio Servicio;
 	
