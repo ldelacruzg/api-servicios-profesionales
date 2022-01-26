@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.smty.ApiServiciosProfesionales.Models.UsuarioIdioma;
 
 @Repository
-public interface PersonaIdiomaRepository extends JpaRepository<UsuarioIdioma, Long>{
+public interface UsuarioIdiomaRepository extends JpaRepository<UsuarioIdioma, Long>{
 
 }

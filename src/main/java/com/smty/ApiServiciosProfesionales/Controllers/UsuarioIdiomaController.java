@@ -16,14 +16,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.smty.ApiServiciosProfesionales.Models.UsuarioIdioma;
-import com.smty.ApiServiciosProfesionales.Services.PersonaIdiomaService;
+import com.smty.ApiServiciosProfesionales.Services.UsuarioIdiomaService;
 
 @RestController
 @RequestMapping("api/personasidiomas")
 @CrossOrigin("*")
-public class PersonaIdiomaController {
+public class UsuarioIdiomaController {
 	@Autowired
-	private PersonaIdiomaService personaIdiomaService;
+	private UsuarioIdiomaService usuarioIdiomaService;
 	
 	//LISTAR TODO
     @GetMapping
@@ -31,7 +31,7 @@ public class PersonaIdiomaController {
     {
         try
         {
-            return ResponseEntity.ok().body(personaIdiomaService.findAll());
+            return ResponseEntity.ok().body(usuarioIdiomaService.findAll());
         }
         catch (Exception e)
         {
@@ -45,7 +45,7 @@ public class PersonaIdiomaController {
     {
         try
         {
-            return ResponseEntity.ok().body(personaIdiomaService.findById(id));
+            return ResponseEntity.ok().body(usuarioIdiomaService.findById(id));
         }
         catch (Exception e)
         {
@@ -59,7 +59,7 @@ public class PersonaIdiomaController {
     {
         try
         {
-            return ResponseEntity.ok().body(personaIdiomaService.save(entity));
+            return ResponseEntity.ok().body(usuarioIdiomaService.save(entity));
         }
         catch (Exception e)
         {
@@ -73,7 +73,7 @@ public class PersonaIdiomaController {
     {
         try
         {
-            return ResponseEntity.status(HttpStatus.NO_CONTENT).body(personaIdiomaService.delete(id));
+            return ResponseEntity.status(HttpStatus.NO_CONTENT).body(usuarioIdiomaService.delete(id));
         }
         catch (Exception e)
         {
@@ -87,7 +87,7 @@ public class PersonaIdiomaController {
     {
         try
         {
-            return ResponseEntity.ok().body(personaIdiomaService.update(id,entity));
+            return ResponseEntity.ok().body(usuarioIdiomaService.update(id,entity));
         }
         catch (Exception e)
         {

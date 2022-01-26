@@ -9,12 +9,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.smty.ApiServiciosProfesionales.Models.UsuarioIdioma;
-import com.smty.ApiServiciosProfesionales.Repositories.PersonaIdiomaRepository;
+import com.smty.ApiServiciosProfesionales.Repositories.UsuarioIdiomaRepository;
 
 @Service
-public class PersonaIdiomaService {
+public class UsuarioIdiomaService {
 	@Autowired
-	private PersonaIdiomaRepository personaIdiomaService;
+	private UsuarioIdiomaRepository personaIdiomaService;
 	
 	//Este metodo permite listar todos los registro de la entidad.
 	@Transactional
