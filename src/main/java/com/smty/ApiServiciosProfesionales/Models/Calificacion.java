@@ -4,6 +4,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
+import java.util.Date;
 
 @Data
 @Entity
@@ -21,6 +22,10 @@ public class Calificacion {
   	@NotEmpty
 	@Column(name="comentario")
     private String comentario;
+
+	@NotEmpty
+	@Column(name="fecha")
+	private Date fecha;
 
 	  //Todo: relación con la entidad servicio
 	@ManyToOne
