@@ -1,6 +1,7 @@
 package com.smty.ApiServiciosProfesionales.Models;
 
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
@@ -36,6 +37,9 @@ public class Servicio {
 	@Column(name="titulo", length = 200)
     private String titulo;
 
+	@NotEmpty
+	@Temporal(TemporalType.DATE)
+	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
 	@Column(name="fecha_plublicacion")
     private Date fechaPublicacion;
 

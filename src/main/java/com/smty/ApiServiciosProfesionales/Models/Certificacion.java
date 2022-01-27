@@ -1,6 +1,7 @@
 package com.smty.ApiServiciosProfesionales.Models;
 
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;

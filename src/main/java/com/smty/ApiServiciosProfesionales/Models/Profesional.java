@@ -1,10 +1,14 @@
 package com.smty.ApiServiciosProfesionales.Models;
 
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 
 @Data
 @Entity
@@ -21,6 +25,9 @@ public class Profesional {
 	@Column(name ="url_linkedin", length = 100)
 	private String urlLinkedin;
 
+	@NotEmpty
+	@Temporal(TemporalType.DATE)
+	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
 	@Column(name="fecha_registro")
 	private Date fechaRegistro;
 
@@ -33,4 +40,16 @@ public class Profesional {
 	@ManyToOne
 	@JoinColumn(name = "id_ocupacion")
 	private Ocupacion ocupacion;
+
+	//todo: lista de certificaciones
+	@OneToMany(mappedBy = "certificacion", cascade = CascadeType.ALL, orphanRemoval = true)
+	private List<Certificacion> certificacion = new ArrayList<>();
+
+	//todo: lista de habilidades
+	@OneToMany(mappedBy = "habilidad", cascade = CascadeType.ALL, orphanRemoval = true)
+	private List<Habilidad> habilidad = new ArrayList<>();
+
+	//todo: lista de formaciones
+	@OneToMany(mappedBy = "formacion", cascade = CascadeType.ALL, orphanRemoval = true)
+	private List<Formacion> formacion = new ArrayList<>();
 }
