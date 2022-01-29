@@ -6,6 +6,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import java.util.Date;
+import java.util.Set;
 
 @Data
 
@@ -37,21 +38,29 @@ public class Servicio {
 	@Column(name="titulo", length = 200)
     private String titulo;
 
-	@NotEmpty
-	@Temporal(TemporalType.DATE)
+
 	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
 	@Column(name="fecha_plublicacion")
     private Date fechaPublicacion;
 
 	//todo: relacion con la entidad categoria
-	@ManyToOne
+	@OneToOne(cascade = {CascadeType.PERSIST})
 	@JoinColumn(name="id_sub_categoria")
 	private SubCategoria subCategoria;
 
 	//todo: relacion con la entidad profesional
-	@ManyToOne
+	@OneToOne(cascade = {CascadeType.PERSIST})
 	@JoinColumn(name="id_profesional")
 	private Profesional profesional;
 	
+	//todo: lista de planes
+	@OneToMany(cascade = {CascadeType.ALL}, targetEntity = Plan.class)
+	@JoinColumn(name = "id_servicio",referencedColumnName = "id_servicio")
+	private Set<Plan> planes;
+	
+	//todo: lista de calificaciones
+	@OneToMany(cascade = {CascadeType.ALL}, targetEntity = Plan.class)
+	@JoinColumn(name = "id_servicio",referencedColumnName = "id_servicio")
+	private Set<Calificacion> calificaciones;
 	
 }

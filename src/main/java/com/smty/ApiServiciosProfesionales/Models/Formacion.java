@@ -21,14 +21,14 @@ public class Formacion {
     @NotEmpty
     @Column(name ="descripcion", length = 50)
     private String descripcion;
+    
+    @NotEmpty
+    @Column(name="year")
+    private String year;
 
     //Todo: relacion con la entidad pais
-    @ManyToOne
+    @OneToOne(cascade = {CascadeType.ALL})
     @JoinColumn(name = "id_pais")
     private Pais pais;
 
-    //Todo: relacion con la entidad pais
-    @ManyToOne
-    @JoinColumn(name = "id_profesional")
-    private Profesional profesional;
 }

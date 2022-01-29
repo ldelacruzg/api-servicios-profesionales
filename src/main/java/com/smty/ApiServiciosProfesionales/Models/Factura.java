@@ -30,11 +30,11 @@ public class Factura {
 	@Column(name="estado")
     private Boolean estado;
 
-	@ManyToOne
+	@OneToOne(cascade = {CascadeType.PERSIST})
 	@JoinColumn(name="id_usuario")
 	private Usuario usuario;
 
-	@ManyToOne
+	@ManyToOne(cascade = {CascadeType.ALL})
 	@JoinColumn(name="id_servicio")
 	private Servicio Servicio;
 }

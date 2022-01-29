@@ -2,8 +2,12 @@ package com.smty.ApiServiciosProfesionales.Models;
 
 import lombok.Data;
 
+import java.sql.Date;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Data
 @Entity
@@ -23,9 +27,9 @@ public class Pregunta {
     @NotEmpty
 	@Column(name="respuesta")
     private String respuesta;
+    
+	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+    @Column(name = "fecha")
+    private Date fecha;
 
-    //todo: relacion con la entidad servicio
-    @ManyToOne
-	@JoinColumn(name="id_servicio")
-    private Servicio servicio;
 }

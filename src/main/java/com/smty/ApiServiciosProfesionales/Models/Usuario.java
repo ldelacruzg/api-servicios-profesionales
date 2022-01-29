@@ -58,7 +58,7 @@ public class Usuario {
 	private String email;
 
 	//todo: relacion con la entidad pais
-	@ManyToOne
+	@OneToOne(cascade = {CascadeType.PERSIST})
 	@JoinColumn(name="id_pais")
 	private Pais pais;
 }

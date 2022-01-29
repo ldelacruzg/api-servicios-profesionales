@@ -22,9 +22,4 @@ public class Certificacion {
     @Column(name="year")
     private String year;
 
-    //todo: relacion con la entidad profesional
-    @ManyToOne
-    @JoinColumn(name="id_profesional")
-    private Profesional profesional;
-
 }

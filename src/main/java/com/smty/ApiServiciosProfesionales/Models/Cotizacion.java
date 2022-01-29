@@ -35,13 +35,6 @@ public class Cotizacion {
 	@Column(name="documento", length = 50)
     private String documento;
 
-	//todo: relacion con la entidad usuario
-	@ManyToOne
-	@JoinColumn(name="id_usuario")
-	private Usuario usuario;
-
-	//todo: relacion con la entidad profesional
-	@ManyToOne
-	@JoinColumn(name="id_profesional")
-	private Profesional profesional;
+	@OneToOne(cascade = {CascadeType.PERSIST})
+	private Servicio  servicio;
 }

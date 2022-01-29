@@ -23,20 +23,10 @@ public class Calificacion {
   	@NotEmpty
 	@Column(name="comentario")
     private String comentario;
-
-	@NotEmpty
-	@Temporal(TemporalType.DATE)
+ 
+  	@Temporal(TemporalType.DATE)
 	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
 	@Column(name="fecha")
 	private Date fecha;
 
-	  //Todo: relación con la entidad servicio
-	@ManyToOne
-	@JoinColumn(name="id_servicio")
-	private Servicio servicio;
-
-	//Todo: Relacion con la entidad usuario
-	@ManyToOne
-	@JoinColumn(name="id_usuario")
-	private Usuario usuario;
 }

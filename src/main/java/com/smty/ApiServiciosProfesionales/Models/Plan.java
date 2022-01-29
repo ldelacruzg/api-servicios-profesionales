@@ -17,4 +17,17 @@ public class Plan {
     @NotEmpty
     @Column(name ="nombre", length = 50)
     private String nombre;
+    
+    @NotEmpty
+	@Column(name="descripcion")
+    private String descripcion;
+
+	@NotEmpty
+	@Column(name="dias_delivery")
+    private Short diasDeliviery;
+
+	@NotEmpty
+	@Column(name="precio")
+    private Double precio;
+
 }

@@ -1,8 +1,11 @@
 package com.smty.ApiServiciosProfesionales.Models;
 import lombok.Data;
 
+import java.util.Set;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
+
 
 @Data
 @Entity
@@ -17,10 +20,9 @@ public class Categoria {
 	@Column(name = "nombre", length = 50)
 	private String nombre;
 
-	//Todo: relacion con la entidad ocupacion
-	@ManyToOne
-	@JoinColumn(name = "id_ocupacion")
-	private Ocupacion ocupacion;
-
+	//todo: lista de formaciones
+	@OneToMany(cascade = {CascadeType.ALL}, targetEntity = SubCategoria.class)
+	@JoinColumn(name = "id_categoria",referencedColumnName = "id_categoria")
+	private Set<SubCategoria> subcategorias;
 
 }

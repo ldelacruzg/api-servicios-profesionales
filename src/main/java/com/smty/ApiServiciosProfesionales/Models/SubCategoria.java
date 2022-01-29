@@ -19,8 +19,4 @@ public class SubCategoria {
 	@Column(name="nombre", length = 50)
     private String nombre;
 
-	//todo: relacion con la entidad categoria
-	@ManyToOne
-	@JoinColumn(name="id_categoria")
-	private Categoria categoria;
 }

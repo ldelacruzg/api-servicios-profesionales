@@ -14,8 +14,4 @@ public class Imagen {
     @Column(name= "imagen", length=50)
     private String imagen;
 
-    //todo: relacion con la entidad servicio
-    @ManyToOne
-    @JoinColumn(name = "id_servicio")
-    private Servicio servicio;
 }
